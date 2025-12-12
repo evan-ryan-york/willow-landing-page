@@ -11,44 +11,49 @@ interface FAQ {
 
 const faqs: FAQ[] = [
   {
-    question: "What grade levels does Willow Education serve?",
+    question: "How does Willow actually improve key student results?",
     answer:
-      "Willow Education serves students in grades 6-12. Our curriculum is designed to be age-appropriate and scalable, with content tailored to middle school and high school learners.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    question: "How long does implementation take?",
+    question: "We already have a lot of tools. Why should we switch?",
     answer:
-      "Typical implementation takes 4-6 weeks from contract signing to launch. This includes educator training, platform setup, and curriculum customization to meet your school's specific needs.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    question: "What kind of training is provided for educators?",
+    question: "How does the AI make results 10 times better than what we do now?",
     answer:
-      "We provide comprehensive professional development including online training modules, live workshops, ongoing support, and access to our educator community. Training covers curriculum delivery, platform navigation, and best practices for career exploration.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    question: "How do you measure student outcomes?",
+    question: "How much work will this be for my staff and me? I'm worried it will just create more problems?",
     answer:
-      "Our platform tracks multiple metrics including student engagement, assessment completion, career interest development, and skill growth. We provide detailed analytics dashboards and custom reports to demonstrate program impact.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    question: "Can the curriculum be customized for our school?",
+    question: "What is the setup process like?",
     answer:
-      "Yes! We work closely with each partner to customize curriculum content, align with district goals, and incorporate local career opportunities and industry partnerships.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    question: "What kind of ongoing support do you provide?",
+    question: "What kind of ongoing support will we get to make sure the program succeeds?",
     answer:
-      "Partners receive dedicated account management, technical support, regular check-ins, access to our resource library, and continuous curriculum updates based on the latest research and best practices.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    question: "How much does Willow Education cost?",
+    question: "You mention a \"curriculum,\" what does that mean for how the program is run day-to-day?",
     answer:
-      "Pricing varies based on school size, grade levels served, and implementation scope. We offer flexible pricing models and work within school budgets. Request a proposal to receive a customized quote for your school.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
   {
-    question: "Is Willow Education research-backed?",
+    question: "What makes this product truly different from all the other college and career planning tools out there?",
     answer:
-      "Absolutely. Our curriculum is built on extensive research in career development, economic mobility, and student engagement. We partner with leading researchers and continuously evaluate program effectiveness.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  },
+  {
+    question: "Does this program only focus on students going to college, or does it help students who want other career paths?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
 ];
 
