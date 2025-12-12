@@ -45,7 +45,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <GreyPlaceholder aspectRatio="square" className="w-full shadow-2xl" />
+            <GreyPlaceholder aspectRatio="square" className="w-full shadow-2xl">
+              <p className="text-gray-500 text-sm text-center px-4">
+                product screen shot of curriculum (lesson plan and slides)
+              </p>
+            </GreyPlaceholder>
           </motion.div>
         </div>
       </div>
