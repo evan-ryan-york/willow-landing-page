@@ -13,38 +13,38 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Willow Education transformed how we approach career readiness. Our students are more engaged and excited about their futures than ever before.",
-    author: "Sarah Johnson",
-    role: "Chief Academic Officer",
-    school: "Lincoln Unified School District",
+      "Willow is incredible! It helps me, my students, and families find high-quality post-secondary educational options. I would highly recommend working with Willow.",
+    author: "Cassidy",
+    role: "Counselor",
+    school: "",
   },
   {
     quote:
-      "The platform is intuitive and the curriculum is research-backed. It's exactly what we needed to modernize our career exploration program.",
-    author: "Michael Chen",
-    role: "Career & College Counselor",
-    school: "Riverside High School",
+      "Partnering with Willow has truly transformed the way my team and students thrive. I have complete peace of mind knowing my team is equipped with a top-tier curriculum, meticulously tailored to align with our unique vision and needs. Even more importantly, my students now engage with a high-quality, real-world curriculum that empowers them to navigate and excel during some of the most pivotal years of their lives.",
+    author: "Wauneta",
+    role: "High School Principal",
+    school: "",
   },
   {
     quote:
-      "The data insights help us demonstrate program impact to stakeholders. We've seen measurable improvements in student engagement and outcomes.",
-    author: "Emily Rodriguez",
-    role: "Director of Student Services",
-    school: "Westfield Academy",
+      "Willow is providing students the opportunity to expand their horizons and explore professional pathways that otherwise tend to get overlooked. My students too often miss out on these paths because they simply don't know about them. Being informed is half the battle.",
+    author: "Nuvia",
+    role: "Counselor",
+    school: "",
   },
   {
     quote:
-      "Professional development for our staff was exceptional. Teachers felt confident and prepared to deliver the curriculum from day one.",
-    author: "David Thompson",
-    role: "Principal",
-    school: "Northside Middle School",
+      "Willow is helping us serve all of our students with excellence.",
+    author: "Annalise",
+    role: "Charter Network Leader",
+    school: "",
   },
   {
     quote:
-      "Students love the interactive platform. It's made career exploration accessible and engaging for all learners.",
-    author: "Jennifer Lee",
-    role: "College & Career Coordinator",
-    school: "Eastwood School District",
+      "Willow Ed has enhanced my seminar class by providing me with great tools. This has allowed me to focus on providing high quality classroom instruction and building strong student relationships. Willow Ed has made it a priority to implement my feedback and my students as well. We are lucky to have the Willow Ed curriculum and platform in our classroom to support the future generation of leaders.",
+    author: "Yosedit",
+    role: "College Seminar Teacher",
+    school: "",
   },
   {
     quote:
