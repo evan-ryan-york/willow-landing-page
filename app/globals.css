@@ -13,7 +13,7 @@
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased;
+    @apply bg-white text-primary antialiased;
   }
 
   html {

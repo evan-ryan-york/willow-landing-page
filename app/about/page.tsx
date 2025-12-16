@@ -16,16 +16,16 @@ export default function AboutPage() {
         {/* Hero Section - Mission & Vision */}
         <section className="bg-gradient-to-b from-gray-50 to-white py-16 sm:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 mb-12">
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-heading mb-12">
               About Us
             </h1>
 
             <div className="space-y-8">
               <div>
-                <h2 className="font-heading text-2xl font-semibold text-gray-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-heading mb-4">
                   Our Mission
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-secondary leading-relaxed">
                   Our mission is to help 10m students realize their full
                   potential by choosing a best-fit, best-quality education next
                   step by 2033.
@@ -33,10 +33,10 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl font-semibold text-gray-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-heading mb-4">
                   Our Vision
                 </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-secondary leading-relaxed">
                   Our vision is to that by helping students make quality next
                   steps, we can transform the economic and social mobility of
                   communities.
@@ -49,10 +49,10 @@ export default function AboutPage() {
         {/* Theory of Action */}
         <section className="py-16 sm:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-gray-900 mb-6">
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-6">
               Theory of Action
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-secondary leading-relaxed">
               When more students choose high-quality next steps after high
               school, not only are they better off, we can shift the demand
               patterns in higher education and employment away from low-quality
@@ -67,13 +67,13 @@ export default function AboutPage() {
         {/* Our Solution */}
         <section className="py-16 sm:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-gray-900 mb-12 text-center">
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-12 text-center">
               Our Solution
             </h2>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <div>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-secondary leading-relaxed">
                   Willow Education has developed a cutting-edge recommendation
                   engine that puts learners in control. By focusing on their
                   unique interests, goals, and financial considerations, we help
@@ -91,7 +91,7 @@ export default function AboutPage() {
         {/* Meet the Team */}
         <section className="py-16 sm:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-gray-900 mb-16 text-center">
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-16 text-center">
               Meet the Team
             </h2>
 
@@ -104,13 +104,13 @@ export default function AboutPage() {
                     className="w-48 h-48 rounded-full"
                   />
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-gray-900 mb-1">
+                <h3 className="font-heading text-xl font-semibold text-heading mb-1">
                   James Cryan
                 </h3>
-                <p className="text-gray-600 font-medium mb-4">
+                <p className="text-secondary font-medium mb-4">
                   Founder & CEO
                 </p>
-                <p className="text-gray-600 leading-relaxed text-left">
+                <p className="text-secondary leading-relaxed text-left">
                   The founder and former CEO of Rocky Mountain Prep – one of
                   Colorado&apos;s most successful public charter school networks –
                   James carries with him over 15 years of experience in the
@@ -133,13 +133,13 @@ export default function AboutPage() {
                     className="w-48 h-48 rounded-full"
                   />
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-gray-900 mb-1">
+                <h3 className="font-heading text-xl font-semibold text-heading mb-1">
                   Ryan York
                 </h3>
-                <p className="text-gray-600 font-medium mb-4">
+                <p className="text-secondary font-medium mb-4">
                   Chief Product & Technology Officer
                 </p>
-                <p className="text-gray-600 leading-relaxed text-left">
+                <p className="text-secondary leading-relaxed text-left">
                   Ryan York has worked in education for 18 years as a teacher,
                   instructional coach, principal, and charter school founder /
                   co-CEO. Throughout his career, he has been passionate about
@@ -163,13 +163,13 @@ export default function AboutPage() {
                     className="w-48 h-48 rounded-full"
                   />
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-gray-900 mb-1">
+                <h3 className="font-heading text-xl font-semibold text-heading mb-1">
                   Jaime Hudgins
                 </h3>
-                <p className="text-gray-600 font-medium mb-4">
+                <p className="text-secondary font-medium mb-4">
                   Chief Academic Officer
                 </p>
-                <p className="text-gray-600 leading-relaxed text-left">
+                <p className="text-secondary leading-relaxed text-left">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco

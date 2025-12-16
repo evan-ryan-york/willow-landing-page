@@ -42,10 +42,10 @@ export function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
             How Does It Work?
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary max-w-3xl mx-auto">
             Our proven three-step process makes it easy to bring transformative
             career exploration to your school.
           </p>
@@ -87,17 +87,17 @@ function StepCard({ step, index }: { step: Step; index: number }) {
         </motion.div>
 
         {/* Step Number */}
-        <div className="text-sm font-semibold text-gray-500 mb-2">
+        <div className="text-sm font-semibold text-secondary mb-2">
           STEP {step.number}
         </div>
 
         {/* Title */}
-        <h3 className="font-heading text-2xl font-semibold text-gray-900 mb-4">
+        <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
           {step.title}
         </h3>
 
         {/* Description */}
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-secondary leading-relaxed">
           {step.description}
         </p>
       </div>
