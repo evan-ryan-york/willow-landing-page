@@ -13,17 +13,11 @@ const config: Config = {
         heading: ["var(--font-poppins)"],
       },
       colors: {
-        text: {
-          heading: "#041D1A",
-          primary: "#252B37",
-          secondary: "#535862",
-          status: {
-            good: "#062F29",
-          },
-          content: {
-            link: "#0278A2",
-          },
-        },
+        heading: "#041D1A",
+        primary: "#252B37",
+        secondary: "#535862",
+        "status-good": "#062F29",
+        "content-link": "#0278A2",
       },
     },
   },
