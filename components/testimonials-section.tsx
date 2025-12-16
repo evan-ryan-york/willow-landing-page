@@ -77,34 +77,51 @@ export function TestimonialsSection() {
 
     if (!section || !cardsContainer || !titleLeft || !titleRight) return;
 
+    // Kill any existing ScrollTriggers and remove pin-spacers
+    ScrollTrigger.getAll().forEach(st => st.kill());
+    document.querySelectorAll('.pin-spacer').forEach(el => el.remove());
+    console.log("All ScrollTriggers killed and pin-spacers removed");
+
     // Create GSAP timeline with ScrollTrigger
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top top",
-        end: "+=400%",
+        end: "bottom top",
         pin: true,
+        pinSpacing: false,
         scrub: 1,
         anticipatePin: 1,
+        invalidateOnRefresh: true,
       },
     });
 
-    // Animate cards scrolling up through the title
-    tl.to(cardsContainer, {
-      y: "-250%",
+    // First animate the title moving up from center
+    tl.to([titleLeft, titleRight], {
+      y: "-25vh",
       ease: "none",
-      duration: 3,
+      duration: 1,
     })
-      // Then animate title split and fade
+      // Then animate cards scrolling up through the title
+      .to(
+        cardsContainer,
+        {
+          y: "-250%",
+          ease: "none",
+          duration: 4,
+        },
+        "-=0.5"
+      )
+      // Finally animate title split and fade - starts at 4th card
       .to(
         titleLeft,
         {
           x: "-30%",
           opacity: 0,
           ease: "power2.inOut",
-          duration: 1,
+          duration: 1.5,
         },
-        ">"
+        "-=2.5"
       )
       .to(
         titleRight,
@@ -112,10 +129,36 @@ export function TestimonialsSection() {
           x: "30%",
           opacity: 0,
           ease: "power2.inOut",
-          duration: 1,
+          duration: 1.5,
         },
         "<"
-      );
+      )
+      // Add a tiny hold at the end to ensure timeline matches scroll duration
+      .to({}, { duration: 0.1 }, "+=0");
+
+    console.log("Timeline built. Duration:", tl.duration(), "seconds");
+
+    // Add callback to unpin when timeline completes
+    tl.eventCallback("onComplete", () => {
+      console.log("Timeline animations complete!");
+    });
+
+    // Force ScrollTrigger to refresh and manually fix pin-spacer height
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+      const spacer = document.querySelector('.pin-spacer') as HTMLElement;
+      if (spacer) {
+        const originalHeight = window.getComputedStyle(spacer).height;
+        console.log("Pin-spacer found! Original height:", originalHeight);
+        // Force pin-spacer to be 100vh (same as section)
+        spacer.style.height = '100vh';
+        spacer.style.maxHeight = '100vh';
+        console.log("Pin-spacer height forced to 100vh");
+      } else {
+        console.log("No pin-spacer found (pinSpacing: false is working)");
+      }
+      console.log("ScrollTrigger refreshed");
+    }, 100);
 
     // Cleanup
     return () => {
@@ -123,6 +166,7 @@ export function TestimonialsSection() {
         tl.scrollTrigger.kill();
       }
       tl.kill();
+      ScrollTrigger.getAll().forEach(st => st.kill());
     };
   }, []);
 
@@ -133,23 +177,26 @@ export function TestimonialsSection() {
       className="testimonial-scroll-section relative overflow-hidden"
       style={{
         height: "100vh",
-        backgroundColor: "#041D1A",
-        backgroundImage: `radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px)`,
-        backgroundSize: "16px 16px",
+        backgroundImage: `linear-gradient(rgba(4, 29, 26, 0.7), rgba(4, 29, 26, 0.7)), url('/testimonials-bg.jpg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <div className="pin-wrapper-testimonials h-full flex justify-center items-center relative">
         {/* Title - Split Left and Right */}
-        <div className="absolute inset-0 flex items-center justify-between px-8 pointer-events-none" style={{ zIndex: 10 }}>
+        <div className="absolute inset-0 flex items-center justify-center gap-2 px-8 pointer-events-none" style={{ zIndex: 10 }}>
           <h2
             ref={titleLeftRef}
             className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white whitespace-nowrap"
+            style={{ textShadow: 'none' }}
           >
             What partners
           </h2>
           <h2
             ref={titleRightRef}
             className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white whitespace-nowrap"
+            style={{ textShadow: 'none' }}
           >
             are saying
           </h2>
@@ -161,36 +208,37 @@ export function TestimonialsSection() {
           className="cards-container-testimonials absolute w-full max-w-[600px]"
           style={{
             top: "100%",
-            zIndex: 5,
+            zIndex: 20,
           }}
         >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="testimonial-card bg-white/10 backdrop-blur-md rounded-[12px] p-8 mb-10 shadow-2xl"
+              className="testimonial-card backdrop-blur-md rounded-[12px] p-6 mb-10 shadow-lg"
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)' }}
             >
               {/* Quote */}
-              <p className="text-gray-100 mb-6 leading-relaxed text-base">
+              <p className="text-gray-900 mb-6 leading-relaxed text-base opacity-100">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
 
               {/* Author Info */}
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 opacity-100">
                 {/* Author Image Placeholder */}
-                <div className="w-12 h-12 bg-gray-600 rounded-full flex-shrink-0" />
+                <div className="w-12 h-12 bg-gray-300 rounded-full flex-shrink-0" />
 
                 {/* Author Details */}
                 <div>
-                  <div className="font-semibold text-white text-base">
+                  <div className="font-semibold text-gray-900 text-base">
                     {testimonial.author}
                   </div>
                   {testimonial.role && (
-                    <div className="text-sm text-gray-300">
+                    <div className="text-sm text-gray-700">
                       {testimonial.role}
                     </div>
                   )}
                   {testimonial.school && (
-                    <div className="text-sm text-gray-400">
+                    <div className="text-sm text-gray-600">
                       {testimonial.school}
                     </div>
                   )}
