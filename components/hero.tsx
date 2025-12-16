@@ -17,10 +17,10 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-gray-900 mb-6 leading-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-heading mb-6 leading-tight">
               Unlock Economic Mobility Through Career Exploration
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl text-secondary mb-8 max-w-2xl mx-auto lg:mx-0">
               A comprehensive career exploration curriculum and platform designed
               to significantly increase economic mobility for students.
             </p>
@@ -31,7 +31,7 @@ export function Hero() {
               >
                 Request a Proposal
               </button>
-              <button className="bg-white text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg border-2 border-gray-900">
+              <button className="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg border-2 border-gray-900">
                 Learn More
               </button>
             </div>
@@ -45,7 +45,7 @@ export function Hero() {
             className="relative"
           >
             <GreyPlaceholder aspectRatio="square" className="w-full shadow-2xl">
-              <p className="text-gray-500 text-sm text-center px-4">
+              <p className="text-secondary text-sm text-center px-4">
                 product screen shot of curriculum (lesson plan and slides)
               </p>
             </GreyPlaceholder>

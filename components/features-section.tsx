@@ -43,10 +43,10 @@ export function FeaturesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
             Everything You Need to Transform Career Readiness
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary max-w-3xl mx-auto">
             When more students make quality next steps, the economic and social
             mobility of communities transforms.
           </p>
@@ -97,13 +97,13 @@ function FeatureBlock({
 
       {/* Content */}
       <div className={`${reverse ? "lg:order-1" : ""}`}>
-        <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
+        <h3 className="font-heading text-2xl sm:text-3xl font-semibold text-heading mb-4">
           {feature.title}
         </h3>
-        <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+        <p className="text-secondary text-lg mb-6 leading-relaxed">
           {feature.description}
         </p>
-        <button className="text-gray-900 font-semibold hover:text-gray-700 transition-colors inline-flex items-center gap-2 border-b-2 border-gray-900 pb-1">
+        <button className="text-content-link font-semibold hover:text-[#025f80] transition-colors inline-flex items-center gap-2 border-b-2 border-content-link pb-1">
           Learn More
           <span aria-hidden="true">→</span>
         </button>

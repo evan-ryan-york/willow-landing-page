@@ -48,31 +48,10 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The community connections feature brought real-world professionals into our classrooms. Students gained invaluable insights into various careers.",
-    author: "Robert Martinez",
-    role: "CTE Director",
-    school: "Summit County Schools",
-  },
-  {
-    quote:
-      "Implementation was seamless with outstanding support from the Willow team. They were with us every step of the way.",
-    author: "Amanda Williams",
-    role: "Chief Innovation Officer",
-    school: "Lakeside Schools",
-  },
-  {
-    quote:
-      "Our students from underserved communities now have access to career exploration opportunities they never had before. This is truly transformative.",
-    author: "Carlos Gutierrez",
-    role: "Equity & Access Director",
-    school: "Valley View District",
-  },
-  {
-    quote:
-      "The curriculum aligns perfectly with our district goals. We've seen significant growth in students' career awareness and planning skills.",
-    author: "Lisa Anderson",
-    role: "Superintendent",
-    school: "Oakdale Public Schools",
+      "I'm seeing students engage in a different way than they ever have before. Students are now interested in applying for summer programs, getting involved in community service, advocating for themselves. It's been really exciting to see how this work is translating into students taking ownership of their futures earlier.",
+    author: "Vincent Caricato",
+    role: "",
+    school: "KIPP Colorado",
   },
 ];
 
@@ -82,10 +61,10 @@ export function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
             What Our Partners Think
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary max-w-3xl mx-auto">
             Hear from educators and administrators who are transforming career
             readiness with Willow Education.
           </p>
@@ -125,7 +104,7 @@ function TestimonialCard({
       className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-colors"
     >
       {/* Quote */}
-      <p className="text-gray-700 mb-6 leading-relaxed italic">
+      <p className="text-secondary mb-6 leading-relaxed italic">
         &ldquo;{testimonial.quote}&rdquo;
       </p>
 
@@ -136,9 +115,9 @@ function TestimonialCard({
 
         {/* Author Details */}
         <div>
-          <div className="font-semibold text-gray-900">{testimonial.author}</div>
-          <div className="text-sm text-gray-600">{testimonial.role}</div>
-          <div className="text-sm text-gray-500">{testimonial.school}</div>
+          <div className="font-semibold text-primary">{testimonial.author}</div>
+          <div className="text-sm text-secondary">{testimonial.role}</div>
+          <div className="text-sm text-secondary">{testimonial.school}</div>
         </div>
       </div>
     </motion.div>

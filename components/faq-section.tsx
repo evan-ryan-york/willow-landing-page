@@ -73,10 +73,10 @@ export function FAQSection() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-secondary">
             Everything you need to know about partnering with Willow Education.
           </p>
         </div>
@@ -101,14 +101,14 @@ function FAQItem({ faq }: { faq: FAQ }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors text-left"
       >
-        <span className="font-heading font-semibold text-gray-900 text-lg">
+        <span className="font-heading font-semibold text-primary text-lg">
           {faq.question}
         </span>
         <div className="flex-shrink-0">
           {isOpen ? (
-            <Minus size={24} weight="regular" className="text-gray-700" />
+            <Minus size={24} weight="regular" className="text-primary" />
           ) : (
-            <Plus size={24} weight="regular" className="text-gray-700" />
+            <Plus size={24} weight="regular" className="text-primary" />
           )}
         </div>
       </button>
@@ -122,7 +122,7 @@ function FAQItem({ faq }: { faq: FAQ }) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-5 text-gray-600 leading-relaxed">
+            <div className="px-6 pb-5 text-secondary leading-relaxed">
               {faq.answer}
             </div>
           </motion.div>
