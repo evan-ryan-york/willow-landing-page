@@ -48,31 +48,10 @@ const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "The community connections feature brought real-world professionals into our classrooms. Students gained invaluable insights into various careers.",
-    author: "Robert Martinez",
-    role: "CTE Director",
-    school: "Summit County Schools",
-  },
-  {
-    quote:
-      "Implementation was seamless with outstanding support from the Willow team. They were with us every step of the way.",
-    author: "Amanda Williams",
-    role: "Chief Innovation Officer",
-    school: "Lakeside Schools",
-  },
-  {
-    quote:
-      "Our students from underserved communities now have access to career exploration opportunities they never had before. This is truly transformative.",
-    author: "Carlos Gutierrez",
-    role: "Equity & Access Director",
-    school: "Valley View District",
-  },
-  {
-    quote:
-      "The curriculum aligns perfectly with our district goals. We've seen significant growth in students' career awareness and planning skills.",
-    author: "Lisa Anderson",
-    role: "Superintendent",
-    school: "Oakdale Public Schools",
+      "I'm seeing students engage in a different way than they ever have before. Students are now interested in applying for summer programs, getting involved in community service, advocating for themselves. It's been really exciting to see how this work is translating into students taking ownership of their futures earlier.",
+    author: "Vincent Caricato",
+    role: "",
+    school: "KIPP Colorado",
   },
 ];
 
