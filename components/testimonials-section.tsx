@@ -61,10 +61,10 @@ export function TestimonialsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
             What Our Partners Think
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary max-w-3xl mx-auto">
             Hear from educators and administrators who are transforming career
             readiness with Willow Education.
           </p>
@@ -104,7 +104,7 @@ function TestimonialCard({
       className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-gray-300 transition-colors"
     >
       {/* Quote */}
-      <p className="text-gray-700 mb-6 leading-relaxed italic">
+      <p className="text-secondary mb-6 leading-relaxed italic">
         &ldquo;{testimonial.quote}&rdquo;
       </p>
 
@@ -115,9 +115,9 @@ function TestimonialCard({
 
         {/* Author Details */}
         <div>
-          <div className="font-semibold text-gray-900">{testimonial.author}</div>
-          <div className="text-sm text-gray-600">{testimonial.role}</div>
-          <div className="text-sm text-gray-500">{testimonial.school}</div>
+          <div className="font-semibold text-primary">{testimonial.author}</div>
+          <div className="text-sm text-secondary">{testimonial.role}</div>
+          <div className="text-sm text-secondary">{testimonial.school}</div>
         </div>
       </div>
     </motion.div>

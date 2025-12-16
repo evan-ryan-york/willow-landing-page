@@ -30,7 +30,7 @@ export function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={openModal}
-              className="bg-white text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg shadow-lg"
+              className="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg shadow-lg"
             >
               Request a Proposal
             </button>

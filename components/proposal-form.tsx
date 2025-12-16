@@ -100,12 +100,12 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
       >
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center rounded-t-2xl">
-          <h2 className="font-heading text-2xl font-semibold text-gray-900">
+          <h2 className="font-heading text-2xl font-semibold text-heading">
             Request a Proposal
           </h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700 transition-colors"
+            className="text-secondary hover:text-primary transition-colors"
           >
             <X size={24} weight="regular" />
           </button>
@@ -114,11 +114,11 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
         {/* Success Message */}
         {isSuccess && (
           <div className="p-6 bg-gray-50 border-b border-gray-200">
-            <div className="flex items-center gap-3 text-gray-900">
-              <CheckCircle size={24} weight="fill" className="text-gray-700" />
+            <div className="flex items-center gap-3 text-status-good">
+              <CheckCircle size={24} weight="fill" className="text-status-good" />
               <div>
                 <p className="font-semibold">Thank you for your interest!</p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary">
                   We&apos;ll be in touch within 24 hours.
                 </p>
               </div>
@@ -129,7 +129,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
         {/* Error Message */}
         {error && (
           <div className="p-6 bg-gray-50 border-b border-gray-200">
-            <p className="text-sm text-gray-900">{error}</p>
+            <p className="text-sm text-primary">{error}</p>
           </div>
         )}
 
@@ -140,7 +140,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
             <div>
               <label
                 htmlFor="firstName"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 First Name *
               </label>
@@ -154,7 +154,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 )}
               />
               {errors.firstName && (
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-secondary">
                   {errors.firstName.message}
                 </p>
               )}
@@ -163,7 +163,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
             <div>
               <label
                 htmlFor="lastName"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 Last Name *
               </label>
@@ -177,7 +177,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 )}
               />
               {errors.lastName && (
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-secondary">
                   {errors.lastName.message}
                 </p>
               )}
@@ -189,7 +189,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 Email *
               </label>
@@ -203,7 +203,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 )}
               />
               {errors.email && (
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-secondary">
                   {errors.email.message}
                 </p>
               )}
@@ -212,7 +212,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 Phone *
               </label>
@@ -226,7 +226,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 )}
               />
               {errors.phone && (
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-secondary">
                   {errors.phone.message}
                 </p>
               )}
@@ -237,7 +237,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
           <div>
             <label
               htmlFor="jobTitle"
-              className="block text-sm font-medium text-gray-900 mb-2"
+              className="block text-sm font-medium text-primary mb-2"
             >
               Job Title *
             </label>
@@ -251,7 +251,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
               )}
             />
             {errors.jobTitle && (
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-secondary">
                 {errors.jobTitle.message}
               </p>
             )}
@@ -261,7 +261,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
           <div>
             <label
               htmlFor="schoolName"
-              className="block text-sm font-medium text-gray-900 mb-2"
+              className="block text-sm font-medium text-primary mb-2"
             >
               School/District Name *
             </label>
@@ -275,7 +275,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
               )}
             />
             {errors.schoolName && (
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-secondary">
                 {errors.schoolName.message}
               </p>
             )}
@@ -286,7 +286,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
             <div>
               <label
                 htmlFor="schoolSize"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 School Size *
               </label>
@@ -305,7 +305,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 <option value="5000+">5,000+ students</option>
               </select>
               {errors.schoolSize && (
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-secondary">
                   {errors.schoolSize.message}
                 </p>
               )}
@@ -314,7 +314,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
             <div>
               <label
                 htmlFor="state"
-                className="block text-sm font-medium text-gray-900 mb-2"
+                className="block text-sm font-medium text-primary mb-2"
               >
                 State *
               </label>
@@ -328,7 +328,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 )}
               />
               {errors.state && (
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-secondary">
                   {errors.state.message}
                 </p>
               )}
@@ -339,7 +339,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
           <div>
             <label
               htmlFor="interests"
-              className="block text-sm font-medium text-gray-900 mb-2"
+              className="block text-sm font-medium text-primary mb-2"
             >
               Areas of Interest (Optional)
             </label>
@@ -356,7 +356,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
           <div>
             <label
               htmlFor="message"
-              className="block text-sm font-medium text-gray-900 mb-2"
+              className="block text-sm font-medium text-primary mb-2"
             >
               Additional Message (Optional)
             </label>
@@ -381,7 +381,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
             <button
               type="button"
               onClick={onClose}
-              className="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-semibold"
+              className="px-6 py-3 border-2 border-gray-300 text-primary rounded-lg hover:bg-gray-50 transition-colors font-semibold"
             >
               Cancel
             </button>

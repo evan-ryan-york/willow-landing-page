@@ -31,7 +31,7 @@ export function Header() {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className="text-primary hover:text-heading transition-colors font-medium"
               >
                 {link.name}
               </a>
@@ -48,7 +48,7 @@ export function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-gray-700 hover:text-gray-900 p-2"
+              className="text-primary hover:text-heading p-2"
             >
               {mobileMenuOpen ? (
                 <X size={24} weight="regular" />
@@ -72,7 +72,7 @@ export function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className="text-primary hover:text-heading transition-colors font-medium"
               >
                 {link.name}
               </a>
