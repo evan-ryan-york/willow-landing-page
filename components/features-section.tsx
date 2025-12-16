@@ -47,8 +47,8 @@ export function FeaturesSection() {
             Everything You Need to Transform Career Readiness
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            By helping students make quality next steps, we can transform the
-            economic and social mobility of communities.
+            When more students make quality next steps, the economic and social
+            mobility of communities transforms.
           </p>
         </div>
 

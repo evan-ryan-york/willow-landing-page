@@ -16,19 +16,19 @@ const stats: Stat[] = [
     value: 300000,
     suffix: "+",
     label: "Students Reached",
-    description: "Empowering students nationwide with career exploration tools",
+    description: "Empowering students nationwide with career exploration tools.",
   },
   {
     value: 500,
     suffix: "+",
-    label: "School Partners",
-    description: "Trusted by schools across the country",
+    label: "Partners",
+    description: "Trusted by schools and nonprofits across the country.",
   },
   {
     value: 95,
     suffix: "%",
     label: "Satisfaction Rate",
-    description: "Educators love our platform and curriculum",
+    description: "Educators love our platform and curriculum.",
   },
 ];
 

@@ -17,21 +17,21 @@ const steps: Step[] = [
     number: 1,
     title: "Plan",
     description:
-      "Work with our team to design a career exploration program tailored to your school's needs and goals.",
+      "Assess needs, determine how to partner (advisory, seminar, etc.), draft implementation plan/SAS.",
     icon: Clipboard,
   },
   {
     number: 2,
     title: "Launch",
     description:
-      "Implement our curriculum with comprehensive training and support for educators. Students begin their career exploration journey.",
+      "Onboard staff, get kids on platform, start curriculum.",
     icon: Rocket,
   },
   {
     number: 3,
     title: "Refine & Grow",
     description:
-      "Use data insights to measure impact and continuously improve. Scale successful programs across your district.",
+      "Data tracking, observations, coaching, etc.",
     icon: TrendUp,
   },
 ];
@@ -92,9 +92,14 @@ function StepCard({ step, index }: { step: Step; index: number }) {
         </div>
 
         {/* Title */}
-        <h3 className="font-heading text-2xl font-semibold text-gray-900">
+        <h3 className="font-heading text-2xl font-semibold text-gray-900 mb-4">
           {step.title}
         </h3>
+
+        {/* Description */}
+        <p className="text-gray-600 leading-relaxed">
+          {step.description}
+        </p>
       </div>
     </motion.div>
   );

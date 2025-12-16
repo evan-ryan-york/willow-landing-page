@@ -21,9 +21,8 @@ export function Hero() {
               Unlock Economic Mobility Through Career Exploration
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Willow Education provides a comprehensive career exploration
-              curriculum and platform designed to significantly increase
-              economic mobility for students.
+              A comprehensive career exploration curriculum and platform designed
+              to significantly increase economic mobility for students.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
