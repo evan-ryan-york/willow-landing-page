@@ -41,17 +41,6 @@ export function FeaturesSection() {
   return (
     <section id="features" className="py-20 md:py-30 bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-heading mb-4">
-            Everything you need to transform career readiness
-          </h2>
-          <p className="text-lg text-secondary max-w-3xl mx-auto">
-            When more students make quality next steps, the economic and social
-            mobility of communities transforms.
-          </p>
-        </div>
-
         {/* Features */}
         <div className="space-y-24">
           {features.map((feature, index) => (
