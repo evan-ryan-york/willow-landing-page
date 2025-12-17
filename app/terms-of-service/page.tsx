@@ -1,0 +1,154 @@
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+
+export const metadata = {
+  title: "Terms of Service | Willow Education",
+  description:
+    "Willow Ed Terms of Service Agreement for schools using the Willow Ed web application.",
+};
+
+export default function TermsOfServicePage() {
+  return (
+    <>
+      <Header />
+      <main className="min-h-screen bg-white">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-b from-gray-50 to-white pt-16 sm:pt-24 pb-10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="font-heading text-[30px] font-medium text-heading text-left">
+              Willow Ed Terms of Service
+            </h1>
+          </div>
+        </section>
+
+        {/* Content Section */}
+        <section className="pt-0 pb-16 sm:pb-24 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="prose prose-lg max-w-none">
+              {/* Introduction */}
+              <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                Terms of Service Agreement
+              </h2>
+              <p className="text-base text-secondary leading-relaxed mb-12">
+                This Terms of Service Agreement (&quot;Agreement&quot;) is made between Willow Education and your school &quot;School&quot; regarding the use of the web application known as Willow Ed (&quot;Application&quot;).
+              </p>
+
+              {/* Section 1 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  1. Grant of License
+                </h2>
+                <p className="text-secondary leading-relaxed mb-4">
+                  Company grants School a non-exclusive, non-transferable license to access and use the Application within the School&apos;s premises for educational purposes only.
+                </p>
+                <p className="text-secondary leading-relaxed">
+                  This license is limited to the number of users stipulated in the purchase agreement between the Company and the School.
+                </p>
+              </div>
+
+              {/* Section 2 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  2. User Responsibility
+                </h2>
+                <p className="text-secondary leading-relaxed mb-4">
+                  School is responsible for the actions of its students, faculty, and staff related to the use of the Application (&quot;Users&quot;).
+                </p>
+                <p className="text-secondary leading-relaxed">
+                  School will ensure Users comply with this Agreement and refrain from any activity that disrupts the Application or infringes on the rights of others.
+                </p>
+              </div>
+
+              {/* Section 3 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  3. Intellectual Property
+                </h2>
+                <p className="text-secondary leading-relaxed">
+                  Company retains all intellectual property rights in and to the Application, including code, design, and documentation. School and Users may not copy, modify, or reverse-engineer the Application.
+                </p>
+              </div>
+
+              {/* Section 4 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  4. Data Privacy
+                </h2>
+                <p className="text-secondary leading-relaxed">
+                  Company will collect and process personal data from Users in accordance with applicable privacy laws, including FERPA (Family Educational Rights and Privacy Act) if operating in the U.S. Company will have in place security measures that protect this data from unauthorized access, use, or disclosure. School will gain proper consent from parents or guardians when required before allowing student data to be collected.
+                </p>
+              </div>
+
+              {/* Section 5 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  5. Fees and Payment
+                </h2>
+                <p className="text-secondary leading-relaxed mb-4">
+                  School shall pay Company the fees indicated in the purchase agreement within the timeframe outlined in the purchase agreement.
+                </p>
+                <p className="text-secondary leading-relaxed">
+                  Late payments may incur interest or additional fees.
+                </p>
+              </div>
+
+              {/* Section 6 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  6. Support and Maintenance
+                </h2>
+                <p className="text-secondary leading-relaxed mb-4">
+                  Company will provide technical support to the School during standard business hours via email and phone.
+                </p>
+                <p className="text-secondary leading-relaxed">
+                  Company will update the Application to provide bug fixes and maintain compatibility with standard web browsers.
+                </p>
+              </div>
+
+              {/* Section 7 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  7. Warranty Disclaimer
+                </h2>
+                <p className="text-secondary leading-relaxed uppercase">
+                  THE APPLICATION IS PROVIDED &quot;AS IS&quot; WITH NO WARRANTIES EXPRESS OR IMPLIED. COMPANY DISCLAIMS ALL WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+                </p>
+              </div>
+
+              {/* Section 8 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  8. Limitation of Liability
+                </h2>
+                <p className="text-secondary leading-relaxed uppercase">
+                  COMPANY SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM THIS AGREEMENT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+                </p>
+              </div>
+
+              {/* Section 9 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  9. Termination
+                </h2>
+                <p className="text-secondary leading-relaxed">
+                  Either party may terminate this Agreement for breach by providing written notice to the other party with [number] days opportunity to cure such breach. Upon termination, the School will cease all use of the Application and return or destroy any Company materials related to it.
+                </p>
+              </div>
+
+              {/* Section 10 */}
+              <div className="mb-10">
+                <h2 className="font-heading text-xl font-medium text-heading mb-4">
+                  10. Governing Law and Jurisdiction
+                </h2>
+                <p className="text-secondary leading-relaxed">
+                  This Agreement will be governed by the laws of the United States. Disputes shall be resolved within the jurisdiction of Vermont.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
