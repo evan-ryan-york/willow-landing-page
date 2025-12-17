@@ -20,11 +20,11 @@ export default function TheChallengePage() {
             <div className="max-w-4xl">
               <div className="inline-block px-4 py-2 bg-white border border-gray-300 rounded-full mb-6">
                 <span className="text-sm font-medium text-primary">
-                  Specific Challenge
+                  Specific challenge
                 </span>
               </div>
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-heading mb-6">
-                Overwhelmed and Underinformed
+                Overwhelmed and underinformed
               </h1>
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function TheChallengePage() {
                   <div className="w-6 h-6 bg-white rounded-full" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-heading mb-3">
-                  A Maze of Choices
+                  A maze of choices
                 </h3>
                 <p className="text-secondary leading-relaxed">
                   With nearly 1.1 million postsecondary programs and credentials
@@ -57,7 +57,7 @@ export default function TheChallengePage() {
                   <div className="w-6 h-6 bg-white rounded-full" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-heading mb-3">
-                  Lack of Quality Information
+                  Lack of quality information
                 </h3>
                 <p className="text-secondary leading-relaxed">
                   Students and families expect that completing a program will
@@ -73,7 +73,7 @@ export default function TheChallengePage() {
                   <div className="w-6 h-6 bg-white rounded-full" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-heading mb-3">
-                  Counselor Constraints
+                  Counselor constraints
                 </h3>
                 <p className="text-secondary leading-relaxed">
                   Guidance counselors are on the front lines, yet they&apos;re
@@ -89,7 +89,7 @@ export default function TheChallengePage() {
                   <div className="w-6 h-6 bg-white rounded-full" />
                 </div>
                 <h3 className="font-heading text-xl font-semibold text-heading mb-3">
-                  Opaque Alternatives
+                  Opaque alternatives
                 </h3>
                 <p className="text-secondary leading-relaxed">
                   Beyond traditional degrees lies a world of potential in
@@ -107,7 +107,7 @@ export default function TheChallengePage() {
         <section className="py-16 sm:py-24 bg-gray-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-6">
-              The Challenge
+              The challenge
             </h2>
             <p className="text-lg text-secondary leading-relaxed mb-4">
               The promise of postsecondary education is clear: better access to
@@ -123,14 +123,14 @@ export default function TheChallengePage() {
         <section className="py-16 sm:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-12 text-center">
-              Navigating a Broken System
+              Navigating a broken system
             </h2>
 
             <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
               {/* Completion Crisis */}
               <div>
                 <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
-                  Completion Crisis
+                  Completion crisis
                 </h3>
                 <p className="text-secondary leading-relaxed mb-4">
                   The statistics are grim—only 64% of students complete a 4-year
@@ -146,7 +146,7 @@ export default function TheChallengePage() {
               {/* Economic Disparities */}
               <div>
                 <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
-                  Economic Disparities
+                  Economic disparities
                 </h3>
                 <p className="text-secondary leading-relaxed">
                   The postsecondary system is not delivering equitable results.
@@ -159,7 +159,7 @@ export default function TheChallengePage() {
               {/* Bad Investments */}
               <div>
                 <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
-                  Bad Investments
+                  Bad investments
                 </h3>
                 <p className="text-secondary leading-relaxed mb-4">
                   Not all college degrees are created equal.
@@ -178,10 +178,10 @@ export default function TheChallengePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-4">
-                Willow&apos;s Response
+                Willow&apos;s response
               </h2>
               <p className="text-xl text-secondary max-w-3xl mx-auto">
-                Empowering Counselors and Students
+                Empowering counselors and students
               </p>
             </div>
 
@@ -190,7 +190,7 @@ export default function TheChallengePage() {
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
-                    Personalized Guidance
+                    Personalized guidance
                   </h3>
                   <p className="text-lg text-secondary leading-relaxed">
                     Tailored recommendations based on each student&apos;s unique
@@ -206,7 +206,7 @@ export default function TheChallengePage() {
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <div className="lg:order-2">
                   <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
-                    Comprehensive Exploration
+                    Comprehensive exploration
                   </h3>
                   <p className="text-lg text-secondary leading-relaxed">
                     Tools to explore both traditional and alternative pathways
@@ -223,7 +223,7 @@ export default function TheChallengePage() {
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
-                    Ongoing Support
+                    Ongoing support
                   </h3>
                   <p className="text-lg text-secondary leading-relaxed">
                     A dedicated team and community that works alongside you to
@@ -239,7 +239,7 @@ export default function TheChallengePage() {
               <div className="grid lg:grid-cols-2 gap-8 items-center">
                 <div className="lg:order-2">
                   <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
-                    Transparent Data
+                    Transparent data
                   </h3>
                   <p className="text-lg text-secondary leading-relaxed">
                     Real-time cost and ROI projections that empower students to

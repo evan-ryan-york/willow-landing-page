@@ -102,7 +102,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center rounded-t-card">
           <h2 className="font-heading text-2xl font-semibold text-heading">
-            Request a Proposal
+            Request a proposal
           </h2>
           <button
             onClick={onClose}

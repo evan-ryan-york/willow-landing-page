@@ -38,7 +38,7 @@ export function HowItWorks() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
-            How Does It Work?
+            How does it work?
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto">
             Our proven three-step process makes it easy to bring transformative

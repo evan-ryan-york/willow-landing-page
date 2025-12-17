@@ -74,7 +74,7 @@ export function FAQSection() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
-            Frequently Asked Questions
+            Frequently asked questions
           </h2>
           <p className="text-lg text-secondary">
             Everything you need to know about partnering with Willow Education.

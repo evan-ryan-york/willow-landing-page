@@ -10,26 +10,26 @@ import {
 const footerLinks = {
   product: [
     { name: "Features", href: "#features" },
-    { name: "How It Works", href: "#how-it-works" },
+    { name: "How it works", href: "#how-it-works" },
     { name: "Pricing", href: "#pricing" },
-    { name: "Case Studies", href: "#case-studies" },
+    { name: "Case studies", href: "#case-studies" },
   ],
   company: [
-    { name: "About Us", href: "#about" },
+    { name: "About us", href: "#about" },
     { name: "Careers", href: "#careers" },
     { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" },
   ],
   resources: [
-    { name: "Help Center", href: "#help" },
+    { name: "Help center", href: "#help" },
     { name: "Research", href: "#research" },
     { name: "Community", href: "#community" },
     { name: "Events", href: "#events" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "#privacy" },
-    { name: "Terms of Service", href: "#terms" },
-    { name: "Cookie Policy", href: "#cookies" },
+    { name: "Privacy policy", href: "#privacy" },
+    { name: "Terms of service", href: "#terms" },
+    { name: "Cookie policy", href: "#cookies" },
   ],
 };
 

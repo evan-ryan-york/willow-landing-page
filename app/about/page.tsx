@@ -17,13 +17,13 @@ export default function AboutPage() {
         <section className="bg-gradient-to-b from-gray-50 to-white py-16 sm:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-heading mb-12">
-              About Us
+              About us
             </h1>
 
             <div className="space-y-8">
               <div>
                 <h2 className="font-heading text-2xl font-semibold text-heading mb-4">
-                  Our Mission
+                  Our mission
                 </h2>
                 <p className="text-lg text-secondary leading-relaxed">
                   Our mission is to help 10m students realize their full
@@ -34,7 +34,7 @@ export default function AboutPage() {
 
               <div>
                 <h2 className="font-heading text-2xl font-semibold text-heading mb-4">
-                  Our Vision
+                  Our vision
                 </h2>
                 <p className="text-lg text-secondary leading-relaxed">
                   Our vision is to that by helping students make quality next
@@ -50,7 +50,7 @@ export default function AboutPage() {
         <section className="py-16 sm:py-24 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-6">
-              Theory of Action
+              Theory of action
             </h2>
             <p className="text-lg text-secondary leading-relaxed">
               When more students choose high-quality next steps after high
@@ -68,7 +68,7 @@ export default function AboutPage() {
         <section className="py-16 sm:py-24 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-12 text-center">
-              Our Solution
+              Our solution
             </h2>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -92,7 +92,7 @@ export default function AboutPage() {
         <section className="py-16 sm:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-heading mb-16 text-center">
-              Meet the Team
+              Meet the team
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">

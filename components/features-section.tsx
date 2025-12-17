@@ -44,7 +44,7 @@ export function FeaturesSection() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
-            Everything You Need to Transform Career Readiness
+            Everything you need to transform career readiness
           </h2>
           <p className="text-lg text-secondary max-w-3xl mx-auto">
             When more students make quality next steps, the economic and social
