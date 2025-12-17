@@ -18,15 +18,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <nav className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
+        <div className="flex items-center h-16 relative">
           {/* Logo */}
           <div className="flex items-center">
             <WillowLogo className="h-8 w-auto" />
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -36,16 +36,20 @@ export function Header() {
                 {link.name}
               </a>
             ))}
+          </div>
+
+          {/* Desktop CTA Button */}
+          <div className="hidden md:block ml-auto">
             <button
               onClick={openModal}
               className="bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors font-semibold"
             >
-              Request a Proposal
+              Request a proposal
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden ml-auto">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-primary hover:text-heading p-2"
@@ -84,7 +88,7 @@ export function Header() {
               }}
               className="bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors font-semibold w-full"
             >
-              Request a Proposal
+              Request a proposal
             </button>
           </div>
         </div>

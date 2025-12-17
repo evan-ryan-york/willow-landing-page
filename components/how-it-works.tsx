@@ -38,8 +38,8 @@ const steps: Step[] = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 sm:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="how-it-works" className="py-20 md:py-30 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
@@ -75,13 +75,13 @@ function StepCard({ step, index }: { step: Step; index: number }) {
       transition={{ duration: 0.5, delay: index * 0.2 }}
       className="relative"
     >
-      <div className="bg-white rounded-2xl p-8 h-full shadow-lg border border-gray-200 hover:shadow-xl transition-shadow">
+      <div className="bg-card-bg rounded-card p-8 h-full shadow-subtle border border-gray-200 transition-shadow">
         {/* Animated Icon */}
         <motion.div
           initial={{ scale: 0 }}
           animate={isInView ? { scale: 1 } : { scale: 0 }}
           transition={{ duration: 0.5, delay: index * 0.2 + 0.3, type: "spring" }}
-          className="w-16 h-16 bg-gray-900 rounded-xl flex items-center justify-center mb-6"
+          className="w-16 h-16 bg-gray-900 rounded-card flex items-center justify-center mb-6"
         >
           <Icon size={32} weight="regular" className="text-white" />
         </motion.div>

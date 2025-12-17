@@ -13,7 +13,7 @@ export function LogoCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="py-12 bg-white overflow-hidden border-y border-gray-200">
+    <section className="py-12 bg-white overflow-hidden">
       <div className="relative">
         {/* Gradient overlays for fade effect */}
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />

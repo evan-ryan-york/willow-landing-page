@@ -7,8 +7,8 @@ import { useProposalModal } from "@/lib/proposal-modal-context";
 export function Hero() {
   const { openModal } = useProposalModal();
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-16 sm:py-24 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white py-20 md:py-30">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Text Content */}
           <motion.div
@@ -17,19 +17,19 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-heading mb-6 leading-tight">
-              Unlock Economic Mobility Through Career Exploration
+            <h1 className="font-heading text-[32px] md:text-5xl lg:text-[60px] font-semibold text-heading mb-6 leading-tight">
+              Unlock economic mobility through career exploration
             </h1>
-            <p className="text-lg sm:text-xl text-secondary mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base text-secondary mb-8 max-w-2xl mx-auto lg:mx-0">
               A comprehensive career exploration curriculum and platform designed
               to significantly increase economic mobility for students.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={openModal}
-                className="bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors font-semibold text-lg shadow-lg"
+                className="bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors font-semibold text-lg"
               >
-                Request a Proposal
+                Request a proposal
               </button>
               <button className="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-50 transition-colors font-semibold text-lg border-2 border-gray-900">
                 Learn More
@@ -44,7 +44,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <GreyPlaceholder aspectRatio="square" className="w-full shadow-2xl">
+            <GreyPlaceholder aspectRatio="square" className="w-full shadow-subtle">
               <p className="text-secondary text-sm text-center px-4">
                 product screen shot of curriculum (lesson plan and slides)
               </p>

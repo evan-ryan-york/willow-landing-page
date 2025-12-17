@@ -34,8 +34,8 @@ const stats: Stat[] = [
 
 export function StatsSection() {
   return (
-    <section className="py-16 sm:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-30 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <div className="grid md:grid-cols-3 gap-8">
           {stats.map((stat, index) => (
             <StatCard key={index} stat={stat} index={index} />
@@ -63,7 +63,7 @@ function StatCard({ stat, index }: { stat: Stat; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+      className="bg-card-bg rounded-card p-8 shadow-subtle border border-gray-200"
     >
       <div className="text-center">
         <div className="font-heading text-5xl font-semibold text-status-good mb-2">

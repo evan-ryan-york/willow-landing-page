@@ -39,8 +39,8 @@ const features: Feature[] = [
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-16 sm:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="features" className="py-20 md:py-30 bg-white">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">

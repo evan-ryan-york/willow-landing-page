@@ -10,14 +10,14 @@ export function FinalCTA() {
   const { openModal } = useProposalModal();
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-30 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="bg-gray-900 rounded-3xl p-8 sm:p-12 lg:p-16 text-center shadow-2xl"
+          className="bg-gray-900 rounded-3xl p-8 sm:p-12 lg:p-16 text-center shadow-subtle"
         >
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-white mb-6">
             Ready to transform career readiness at your school?
@@ -32,10 +32,10 @@ export function FinalCTA() {
               onClick={openModal}
               className="bg-white text-primary px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg shadow-lg"
             >
-              Request a Proposal
+              Request a proposal
             </button>
             <button className="bg-transparent text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors font-semibold text-lg border-2 border-white">
-              Schedule a Demo
+              Schedule a demo
             </button>
           </div>
         </motion.div>

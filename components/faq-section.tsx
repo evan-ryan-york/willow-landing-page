@@ -69,8 +69,8 @@ const faqs: FAQ[] = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-16 sm:py-24 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 md:py-30 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-5 md:px-10 lg:px-16">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-semibold text-heading mb-4">
@@ -96,7 +96,7 @@ function FAQItem({ faq }: { faq: FAQ }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+    <div className="bg-white rounded-card border border-gray-200 overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors text-left"

@@ -195,8 +195,7 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="testimonial-card backdrop-blur-md rounded-[12px] p-6 mb-10 shadow-lg"
-              style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)' }}
+              className="testimonial-card backdrop-blur-md rounded-card p-6 mb-10 shadow-subtle bg-white/60"
             >
               {/* Quote */}
               <p className="text-gray-900 mb-6 leading-relaxed text-base opacity-100">
