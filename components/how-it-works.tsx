@@ -2,37 +2,32 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Clipboard, Rocket, TrendUp, Icon } from "phosphor-react";
-import type { IconProps } from "phosphor-react";
+import Image from "next/image";
 
 interface Step {
-  number: number;
   title: string;
   description: string;
-  icon: React.ForwardRefExoticComponent<IconProps & React.RefAttributes<SVGSVGElement>>;
+  image: string;
 }
 
 const steps: Step[] = [
   {
-    number: 1,
     title: "Plan",
     description:
       "Assess needs, determine how to partner (advisory, seminar, etc.), draft implementation plan/SAS.",
-    icon: Clipboard,
+    image: "/plan.png",
   },
   {
-    number: 2,
     title: "Launch",
     description:
       "Onboard staff, get kids on platform, start curriculum.",
-    icon: Rocket,
+    image: "/launch.png",
   },
   {
-    number: 3,
     title: "Refine & Grow",
     description:
       "Data tracking, observations, coaching, etc.",
-    icon: TrendUp,
+    image: "/grow.png",
   },
 ];
 
@@ -65,7 +60,6 @@ export function HowItWorks() {
 function StepCard({ step, index }: { step: Step; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const Icon = step.icon;
 
   return (
     <motion.div
@@ -73,33 +67,46 @@ function StepCard({ step, index }: { step: Step; index: number }) {
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
-      className="relative"
+      className="relative h-full"
     >
-      <div className="bg-card-bg rounded-card p-8 h-full shadow-subtle border border-gray-200 transition-shadow">
-        {/* Animated Icon */}
+      <div className="relative bg-[#062F29] rounded-[12px] pt-6 px-6 pb-10 h-full overflow-hidden flex flex-col">
+        {/* Decorative Illustration */}
         <motion.div
-          initial={{ scale: 0 }}
-          animate={isInView ? { scale: 1 } : { scale: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.2 + 0.3, type: "spring" }}
-          className="w-16 h-16 bg-gray-900 rounded-card flex items-center justify-center mb-6"
+          initial={{ scale: 0, rotate: -10 }}
+          animate={isInView ? { scale: 1, rotate: 0 } : { scale: 0, rotate: -10 }}
+          transition={{ duration: 0.6, delay: index * 0.2 + 0.3, type: "spring", bounce: 0.4 }}
+          className="relative w-full h-[280px] flex-shrink-0 mb-8"
         >
-          <Icon size={32} weight="regular" className="text-white" />
+          <Image
+            src={step.image}
+            alt=""
+            fill
+            className="object-contain"
+          />
         </motion.div>
 
-        {/* Step Number */}
-        <div className="text-sm font-semibold text-secondary mb-2">
-          STEP {step.number}
+        {/* Content */}
+        <div className="text-center">
+          {/* Title */}
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 + 0.5 }}
+            className="font-heading text-2xl md:text-3xl font-semibold text-white mb-4"
+          >
+            {step.title}
+          </motion.h3>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.2 + 0.6 }}
+            className="text-white/90 leading-relaxed text-base"
+          >
+            {step.description}
+          </motion.p>
         </div>
-
-        {/* Title */}
-        <h3 className="font-heading text-2xl font-semibold text-heading mb-4">
-          {step.title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-secondary leading-relaxed">
-          {step.description}
-        </p>
       </div>
     </motion.div>
   );
