@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
-import { ArrowLeft, ArrowRight } from "phosphor-react";
+import { useState, useMemo, useCallback, useEffect } from "react";
+import { ArrowLeft, ArrowRight, Star, Briefcase, Target, BookOpen, Heart, Quotes } from "phosphor-react";
 import quizQuestions from "@/lib/data/quiz-questions.json";
 import personalityTypes from "@/lib/data/personality-types.json";
 
@@ -37,6 +37,13 @@ interface PersonalityType {
   title: string;
   shortDescription: string;
   superpowers: string;
+  workStyle: string;
+  personalGoals: string[];
+  studyTips: string[];
+  relationshipTips: string;
+  whatItMeans: string;
+  areasToImprove: string;
+  recommendedCareersOpening: string;
   recommendedCareers: Array<{
     onetCode: string;
     title: string;
@@ -44,6 +51,11 @@ interface PersonalityType {
   }>;
   possibleMajors: Array<{
     title: string;
+    description: string;
+  }>;
+  inspirationalQuotes: Array<{
+    quote: string;
+    name: string;
     description: string;
   }>;
 }
@@ -254,6 +266,9 @@ function SuperpowersList({ superpowers }: { superpowers: string[] }) {
   );
 }
 
+// localStorage key for persisting quiz state
+const STORAGE_KEY = "willow-personality-quiz";
+
 // Main Quiz Page Component
 export default function PersonalityQuizPage() {
   const [view, setView] = useState<QuizView>("start");
@@ -261,6 +276,46 @@ export default function PersonalityQuizPage() {
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [personalityResult, setPersonalityResult] = useState<PersonalityType | null>(null);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  // Load saved state from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed.personalityResultId) {
+          // Find the personality type by ID
+          const result = (personalityTypes as PersonalityType[]).find(
+            pt => pt.id === parsed.personalityResultId
+          );
+          if (result) {
+            setPersonalityResult(result);
+            setView("results");
+            setAnswers(parsed.answers || []);
+          }
+        }
+      }
+    } catch (e) {
+      // Ignore localStorage errors
+    }
+    setIsHydrated(true);
+  }, []);
+
+  // Save to localStorage when quiz is completed
+  useEffect(() => {
+    if (isHydrated && view === "results" && personalityResult) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          personalityResultId: personalityResult.id,
+          answers: answers,
+          completedAt: new Date().toISOString(),
+        }));
+      } catch (e) {
+        // Ignore localStorage errors
+      }
+    }
+  }, [isHydrated, view, personalityResult, answers]);
 
   // Filter active questions and sort by order
   const questions = useMemo(() => {
@@ -384,12 +439,27 @@ export default function PersonalityQuizPage() {
 
   // Handle retake quiz
   const handleRetake = useCallback(() => {
+    // Clear localStorage
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {
+      // Ignore localStorage errors
+    }
     setView("start");
     setCurrentQuestionIndex(0);
     setAnswers([]);
     setSelectedOptions([]);
     setPersonalityResult(null);
   }, []);
+
+  // Show loading state until hydrated to prevent flash
+  if (!isHydrated) {
+    return (
+      <div className="min-h-screen bg-[#062F29] flex items-center justify-center">
+        <div className="text-white text-lg">Loading...</div>
+      </div>
+    );
+  }
 
   // Start View
   if (view === "start") {
@@ -444,70 +514,273 @@ export default function PersonalityQuizPage() {
   // Results View
   if (view === "results" && personalityResult) {
     const superpowers = parseSuperpowers(personalityResult.superpowers);
+    const personalGoals = personalityResult.personalGoals || [];
+    const studyTips = personalityResult.studyTips || [];
+    const inspirationalQuotes = personalityResult.inspirationalQuotes || [];
 
     return (
-      <div className="min-h-screen bg-[#062F29] px-4 pb-4 overflow-y-auto">
+      <div className="min-h-screen bg-[#F5F5F3]">
         {/* Header */}
-        <header className="py-4">
-          <div className="flex items-center justify-between">
-            <div className="h-10 w-10">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <path d="M20 4C11.164 4 4 11.164 4 20s7.164 16 16 16 16-7.164 16-16S28.836 4 20 4z" fill="white"/>
-                <path d="M20 8c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S26.627 8 20 8z" fill="#062F29"/>
-                <path d="M20 12c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z" fill="white"/>
-              </svg>
+        <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+          <div className="max-w-5xl mx-auto px-5 md:px-10 py-4">
+            <div className="flex items-center justify-between">
+              <div className="h-8 w-8">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  <path d="M20 4C11.164 4 4 11.164 4 20s7.164 16 16 16 16-7.164 16-16S28.836 4 20 4z" fill="#062F29"/>
+                  <path d="M20 8c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S26.627 8 20 8z" fill="#F5F5F3"/>
+                  <path d="M20 12c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z" fill="#062F29"/>
+                </svg>
+              </div>
+              <span className="font-sans font-semibold text-base text-[#062F29]">
+                Your Results
+              </span>
+              <button
+                onClick={handleRetake}
+                className="text-sm text-[#062F29] hover:underline"
+              >
+                Retake Quiz
+              </button>
             </div>
-            <span className="hidden md:block font-sans font-semibold text-base text-white">
-              Willow&apos;s Personality Quiz
-            </span>
-            <div className="w-10" />
           </div>
         </header>
 
-        {/* Results Content */}
-        <div className="max-w-[800px] mx-auto flex flex-col justify-center min-h-[calc(100vh-120px)]">
-          <div>
-            <p className="font-heading font-semibold text-[22px] leading-7 tracking-tight text-slate-300">
-              You are a...
-            </p>
-            <h1 className="font-heading font-semibold text-[30px] leading-9 tracking-tight text-white mt-2">
-              {personalityResult.title}
-            </h1>
-            <p className="font-sans text-sm leading-5 text-white mt-8">
-              {personalityResult.shortDescription}
-            </p>
-            <p className="font-sans font-semibold text-sm leading-5 text-white mt-4">
-              Your Superpowers:
-            </p>
+        {/* Main Content */}
+        <div className="max-w-5xl mx-auto px-5 md:px-10 pb-16">
+          {/* Personality Type Header */}
+          <div className="bg-[#0A4A42] rounded-xl p-6 md:p-8 mt-6">
+            <div className="flex items-center gap-2 mb-4">
+              <Star size={24} className="text-white" weight="fill" />
+              <span className="font-sans font-semibold text-white">Your personality type</span>
+            </div>
+            <div className="md:flex md:gap-8">
+              {/* Personality Type Image */}
+              <div className="mb-6 md:mb-0 md:flex-shrink-0">
+                <img
+                  src={`/personality-type-images/${personalityResult.id.toUpperCase().replace(/-/g, "")}.jpg`}
+                  alt={personalityResult.title}
+                  className="w-full md:w-80 h-auto rounded-xl object-cover"
+                />
+              </div>
+              <div className="flex-1">
+                <h1 className="font-heading font-semibold text-3xl md:text-4xl text-white mb-4">
+                  {personalityResult.title}
+                </h1>
+                <p className="font-sans text-white/90 leading-relaxed">
+                  {personalityResult.shortDescription}
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Superpowers */}
-          <div className="mt-4">
-            <SuperpowersList superpowers={superpowers} />
+          {/* Superpowers Section */}
+          <div className="mt-10">
+            <div className="flex items-center gap-2 mb-6">
+              <Star size={24} className="text-[#062F29]" />
+              <h2 className="font-heading font-semibold text-2xl text-[#062F29]">
+                Your super powers
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {superpowers.map((superpower, index) => {
+                const parts = superpower.split(/[:–-]/).map(part => part.trim());
+                const title = parts[0] || superpower;
+                const description = parts.slice(1).join(": ").trim() || "";
+                return (
+                  <div key={index} className="bg-neutral-100 rounded-xl p-4">
+                    <h3 className="font-sans font-semibold text-[#062F29]">{title}</h3>
+                    {description && (
+                      <p className="font-sans text-sm text-neutral-600 mt-2">{description}</p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Work Style Section */}
+          {personalityResult.workStyle && (
+            <div className="mt-10">
+              <div className="flex items-center gap-2 mb-6">
+                <Briefcase size={24} className="text-[#062F29]" />
+                <h2 className="font-heading font-semibold text-2xl text-[#062F29]">
+                  Your work style
+                </h2>
+              </div>
+              <p className="font-sans text-neutral-700 leading-relaxed">
+                {personalityResult.workStyle}
+              </p>
+            </div>
+          )}
+
+          {/* Personal Development Goals */}
+          {personalGoals.length > 0 && (
+            <div className="mt-10">
+              <div className="flex items-center gap-2 mb-6">
+                <Target size={24} className="text-[#062F29]" />
+                <h2 className="font-heading font-semibold text-2xl text-[#062F29]">
+                  Personal development goals
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {personalGoals.map((goal, index) => {
+                  const parts = goal.split(":").map(part => part.trim());
+                  const title = parts[0] || goal;
+                  const body = parts.slice(1).join(": ").trim() || "";
+                  return (
+                    <div key={index} className="border border-neutral-200 rounded-xl p-4">
+                      <div className="w-10 h-10 rounded-full bg-[#D8FBDB] flex items-center justify-center mb-3">
+                        <Target size={20} className="text-[#062F29]" />
+                      </div>
+                      <h3 className="font-sans font-semibold text-[#062F29] mb-2">{title}</h3>
+                      {body && (
+                        <p className="font-sans text-sm text-neutral-600">{body}</p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Study Tips & Relationship Tips Side by Side */}
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Study Tips */}
+            {studyTips.length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-6">
+                  <BookOpen size={24} className="text-[#062F29]" />
+                  <h2 className="font-heading font-semibold text-2xl text-[#062F29]">
+                    Study tips
+                  </h2>
+                </div>
+                <div className="space-y-4">
+                  {studyTips.map((tip, index) => {
+                    const parts = tip.split(":").map(part => part.trim());
+                    const title = parts[0] || tip;
+                    const body = parts.slice(1).join(": ").trim() || "";
+                    return (
+                      <div key={index} className="border-b border-neutral-200 pb-4 last:border-b-0">
+                        <h3 className="font-sans font-semibold text-[#062F29]">{title}</h3>
+                        {body && (
+                          <p className="font-sans text-sm text-neutral-600 mt-1">{body}</p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* Relationship Tips */}
+            {personalityResult.relationshipTips && (
+              <div>
+                <div className="flex items-center gap-2 mb-6">
+                  <Heart size={24} className="text-[#062F29]" />
+                  <h2 className="font-heading font-semibold text-2xl text-[#062F29]">
+                    Relationship tips
+                  </h2>
+                </div>
+                <p className="font-sans text-neutral-600 leading-relaxed">
+                  {personalityResult.relationshipTips}
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Recommended Careers */}
           {personalityResult.recommendedCareers && personalityResult.recommendedCareers.length > 0 && (
-            <div className="mt-8">
-              <h3 className="font-heading font-semibold text-lg text-white mb-4">
+            <div className="mt-10">
+              <h2 className="font-heading font-semibold text-2xl text-[#062F29] mb-6">
                 Recommended Careers
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {personalityResult.recommendedCareers.slice(0, 4).map((career, index) => (
-                  <div key={index} className="bg-white/10 rounded-xl p-4">
-                    <p className="font-sans font-semibold text-sm text-white">{career.title}</p>
-                    <p className="font-sans text-xs text-white/70 mt-1">{career.description}</p>
+              </h2>
+              {personalityResult.recommendedCareersOpening && (
+                <p className="font-sans text-neutral-600 mb-6">
+                  {personalityResult.recommendedCareersOpening}
+                </p>
+              )}
+              <div className="bg-white rounded-xl overflow-hidden border border-neutral-200">
+                {/* Header */}
+                <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200 bg-neutral-50">
+                  <span className="font-sans font-semibold text-sm text-neutral-700">Career</span>
+                  <span className="font-sans font-semibold text-sm text-neutral-700">Description</span>
+                </div>
+                {/* Career rows */}
+                {personalityResult.recommendedCareers.map((career, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between px-4 py-4 border-b border-neutral-100 last:border-b-0 hover:bg-neutral-50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-[#D8FBDB] flex items-center justify-center">
+                        <Star size={20} className="text-[#062F29]" />
+                      </div>
+                      <span className="font-sans font-semibold text-[#062F29]">{career.title}</span>
+                    </div>
+                    <p className="font-sans text-sm text-neutral-600 max-w-md text-right">
+                      {career.description}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
           )}
 
-          {/* Action buttons */}
-          <div className="flex justify-end mt-8 gap-4">
+          {/* Possible Majors */}
+          {personalityResult.possibleMajors && personalityResult.possibleMajors.length > 0 && (
+            <div className="mt-10">
+              <h2 className="font-heading font-semibold text-2xl text-[#062F29] mb-6">
+                Possible Majors
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {personalityResult.possibleMajors.map((major, index) => (
+                  <div key={index} className="bg-white border border-neutral-200 rounded-xl p-4">
+                    <h3 className="font-sans font-semibold text-[#062F29]">{major.title}</h3>
+                    <p className="font-sans text-sm text-neutral-600 mt-2">{major.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Inspirational Quotes */}
+          {inspirationalQuotes.length > 0 && (
+            <div className="mt-10">
+              <h2 className="font-heading font-semibold text-2xl text-[#062F29] mb-6">
+                Inspiration from famous mentors
+              </h2>
+              <div className="space-y-4">
+                {inspirationalQuotes.map((quote, index) => (
+                  <div key={index} className="bg-neutral-100 rounded-xl p-6">
+                    <p className="font-sans text-lg text-neutral-700 italic mb-6">
+                      &ldquo;{quote.quote}&rdquo;
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <div className="relative">
+                        <div className="w-12 h-12 rounded-full bg-neutral-300 border-2 border-[#D8FBDB] flex items-center justify-center">
+                          <span className="font-sans font-bold text-neutral-600">
+                            {quote.name.charAt(0)}
+                          </span>
+                        </div>
+                        <div className="absolute -right-2 top-1 w-8 h-8 rounded-full bg-[#D8FBDB] flex items-center justify-center">
+                          <Quotes size={16} className="text-[#062F29]" />
+                        </div>
+                      </div>
+                      <div className="ml-2">
+                        <p className="font-sans font-semibold text-[#062F29]">{quote.name}</p>
+                        <p className="font-sans text-sm text-neutral-600">{quote.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Retake Quiz Button */}
+          <div className="mt-12 flex justify-center">
             <button
               onClick={handleRetake}
-              className="px-6 py-2 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-xl transition-colors flex items-center gap-2"
+              className="px-8 py-3 bg-[#062F29] hover:bg-[#0A4A42] text-white font-semibold rounded-xl transition-colors flex items-center gap-2"
             >
               <ArrowLeft size={20} />
               Retake Quiz
