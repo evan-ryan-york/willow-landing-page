@@ -13,7 +13,7 @@ export function FinalCTA() {
   const { openModal } = useProposalModal();
 
   return (
-    <section className="py-20 md:py-30 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 md:py-30 bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <motion.div
           ref={ref}

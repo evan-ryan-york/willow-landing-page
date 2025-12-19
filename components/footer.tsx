@@ -98,7 +98,7 @@ export function Footer() {
   };
 
   return (
-    <footer>
+    <footer className="bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 py-12 sm:py-16">
         {/* Main Footer Content */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">

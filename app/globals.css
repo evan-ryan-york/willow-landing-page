@@ -22,8 +22,28 @@
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold leading-tight;
+  h1 {
+    @apply font-heading font-medium text-6xl leading-tight;
+  }
+
+  h2 {
+    @apply font-heading font-medium text-[50px] leading-tight;
+  }
+
+  h3 {
+    @apply font-heading font-medium text-[40px] leading-tight;
+  }
+
+  h4 {
+    @apply font-heading font-medium text-3xl leading-tight;
+  }
+
+  h5 {
+    @apply font-heading font-medium text-2xl leading-tight;
+  }
+
+  h6 {
+    @apply font-heading font-medium text-xl leading-tight;
   }
 
   p, li, span {
@@ -42,5 +62,24 @@
 
   .container-padding {
     @apply px-5 md:px-10 lg:px-16;
+  }
+}
+
+/* Testimonials carousel animation */
+.testimonial-carousel {
+  animation: testimonial-scroll 40s linear infinite;
+  width: fit-content;
+}
+
+.testimonial-carousel.paused {
+  animation-play-state: paused;
+}
+
+@keyframes testimonial-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

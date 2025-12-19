@@ -1,13 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Register GSAP plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface Testimonial {
   quote: string;
@@ -68,163 +62,115 @@ const testimonials: Testimonial[] = [
   },
 ];
 
+function TestimonialCard({
+  testimonial,
+  index,
+  onDragStart,
+  onDragEnd,
+}: {
+  testimonial: Testimonial;
+  index: number;
+  onDragStart: () => void;
+  onDragEnd: () => void;
+}) {
+  const initial = testimonial.author.charAt(0).toUpperCase();
+
+  return (
+    <motion.div
+      drag
+      dragSnapToOrigin
+      dragElastic={0.3}
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
+      whileDrag={{ scale: 1.05, zIndex: 50 }}
+      className="testimonial-card bg-white p-6 shadow-lg flex-shrink-0 w-[320px] md:w-[380px] cursor-grab active:cursor-grabbing"
+      style={{
+        translateY: index % 2 === 0 ? 0 : 40,
+        borderRadius: '12px',
+      }}
+    >
+      {/* Author Info */}
+      <div className="flex items-center gap-3 mb-4">
+        {/* Initial Avatar */}
+        <div
+          className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+          style={{ backgroundColor: '#D5D7DA' }}
+        >
+          <span className="text-gray-700 font-semibold text-lg">{initial}</span>
+        </div>
+
+        {/* Author Details */}
+        <div>
+          <div className="font-semibold text-gray-900 text-sm">
+            {testimonial.author}
+          </div>
+          {testimonial.role && (
+            <div className="text-xs text-gray-500">
+              {testimonial.role}
+            </div>
+          )}
+          {testimonial.school && (
+            <div className="text-xs text-gray-500">
+              {testimonial.school}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Quote */}
+      <p className="text-gray-700 leading-relaxed text-sm">
+        &ldquo;{testimonial.quote}&rdquo;
+      </p>
+    </motion.div>
+  );
+}
+
 export function TestimonialsSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-  const titleLeftRef = useRef<HTMLHeadingElement>(null);
-  const titleRightRef = useRef<HTMLHeadingElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const section = sectionRef.current;
-    const cardsContainer = cardsContainerRef.current;
-    const titleLeft = titleLeftRef.current;
-    const titleRight = titleRightRef.current;
-
-    if (!section || !cardsContainer || !titleLeft || !titleRight) return;
-
-    // Kill any existing ScrollTriggers and remove pin-spacers
-    ScrollTrigger.getAll().forEach(st => st.kill());
-    document.querySelectorAll('.pin-spacer').forEach(el => el.remove());
-
-    // Create GSAP timeline with ScrollTrigger
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: "+=350%",
-        pin: true,
-        scrub: 1,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    // First animate the title moving up from center
-    tl.to([titleLeft, titleRight], {
-      y: "-25vh",
-      ease: "none",
-      duration: 1,
-    })
-      // Then animate cards scrolling up through the title
-      .to(
-        cardsContainer,
-        {
-          y: "-250%",
-          ease: "none",
-          duration: 4,
-        },
-        "-=0.5"
-      )
-      // Finally animate title split and fade - starts at 4th card
-      .to(
-        titleLeft,
-        {
-          x: "-30%",
-          opacity: 0,
-          ease: "power2.inOut",
-          duration: 1.5,
-        },
-        "-=2.5"
-      )
-      .to(
-        titleRight,
-        {
-          x: "30%",
-          opacity: 0,
-          ease: "power2.inOut",
-          duration: 1.5,
-        },
-        "<"
-      )
-      // Add a tiny hold at the end to ensure timeline matches scroll duration
-      .to({}, { duration: 0.1 }, "+=0");
-
-    // Cleanup
-    return () => {
-      if (tl.scrollTrigger) {
-        tl.scrollTrigger.kill();
-      }
-      tl.kill();
-      ScrollTrigger.getAll().forEach(st => st.kill());
-    };
-  }, []);
+  // Duplicate testimonials for seamless infinite scroll
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
     <section
       id="testimonials"
-      ref={sectionRef}
-      className="testimonial-scroll-section relative overflow-hidden"
-      style={{
-        height: "100vh",
-        backgroundImage: `linear-gradient(rgba(4, 29, 26, 0.7), rgba(4, 29, 26, 0.7)), url('/testimonials-bg.jpg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
+      className="relative py-20 md:py-28 overflow-hidden bg-gray-50"
     >
-      <div className="pin-wrapper-testimonials h-full flex justify-center items-center relative">
-        {/* Title - Split Left and Right */}
-        <div className="absolute inset-0 flex items-center justify-center gap-2 px-8 pointer-events-none" style={{ zIndex: 10 }}>
-          <h2
-            ref={titleLeftRef}
-            className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white whitespace-nowrap"
-            style={{ textShadow: 'none' }}
-          >
-            What partners
-          </h2>
-          <h2
-            ref={titleRightRef}
-            className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white whitespace-nowrap"
-            style={{ textShadow: 'none' }}
-          >
-            are saying
-          </h2>
-        </div>
+      {/* Header Section */}
+      <div className="max-w-5xl mx-auto px-6 mb-16 md:mb-20 text-center">
+        <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight">
+          <span className="inline">&ldquo;</span>Partnering with Willow has truly transformed the way my team and students thrive<span className="inline">&rdquo;</span>
+        </h2>
+      </div>
 
-        {/* Cards Container */}
+      {/* Carousel Container */}
+      <div className="relative">
+        {/* Fade gradients on edges */}
         <div
-          ref={cardsContainerRef}
-          className="cards-container-testimonials absolute w-full max-w-[600px]"
+          className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
           style={{
-            top: "100%",
-            zIndex: 20,
+            background: "linear-gradient(to right, rgb(249 250 251), transparent)",
           }}
+        />
+        <div
+          className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
+          style={{
+            background: "linear-gradient(to left, rgb(249 250 251), transparent)",
+          }}
+        />
+
+        {/* Scrolling Track */}
+        <div
+          className={`flex items-start gap-6 testimonial-carousel py-8 ${isDragging ? 'paused' : ''}`}
         >
-          {testimonials.map((testimonial, index) => (
-            <div
+          {duplicatedTestimonials.map((testimonial, index) => (
+            <TestimonialCard
               key={index}
-              className="testimonial-card backdrop-blur-md rounded-xl p-6 mb-4 shadow-subtle bg-white/60"
-            >
-              {/* Quote */}
-              <p className="text-gray-900 mb-6 leading-relaxed text-base opacity-100">
-                &ldquo;{testimonial.quote}&rdquo;
-              </p>
-
-              {/* Author Info */}
-              <div className="flex items-center gap-3 opacity-100">
-                {/* Author Image Placeholder */}
-                <div className="w-12 h-12 bg-gray-300 rounded-full flex-shrink-0" />
-
-                {/* Author Details */}
-                <div>
-                  <div className="font-semibold text-gray-900 text-base">
-                    {testimonial.author}
-                  </div>
-                  {testimonial.role && (
-                    <div className="text-sm text-gray-700">
-                      {testimonial.role}
-                    </div>
-                  )}
-                  {testimonial.school && (
-                    <div className="text-sm text-gray-600">
-                      {testimonial.school}
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
+              testimonial={testimonial}
+              index={index}
+              onDragStart={() => setIsDragging(true)}
+              onDragEnd={() => setIsDragging(false)}
+            />
           ))}
         </div>
       </div>
