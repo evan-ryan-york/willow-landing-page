@@ -242,8 +242,9 @@ export default function CurriculumSamplePage() {
                     {/* Submit Button */}
                     <Button
                       type="submit"
+                      variant="primary"
                       disabled={isSubmitting}
-                      className="w-full h-12 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed bg-[#E879F9] text-[#062F29] hover:bg-[#D946EF] text-base font-semibold"
+                      className="w-full h-12 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? "Sending..." : "Download curriculum sample"}
                       {!isSubmitting && <ArrowRight size={16} weight="bold" />}
