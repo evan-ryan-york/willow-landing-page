@@ -49,10 +49,10 @@ export function Hero() {
         alt=""
         width={1006}
         height={478}
-        className="absolute bottom-0 right-0 w-[77%] max-w-[850px] h-auto z-0 pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
+        className="absolute bottom-0 right-0 w-[77%] max-w-[850px] h-auto z-0 pointer-events-none"
         aria-hidden="true"
       />
-      <div className="absolute bottom-0 right-0 w-[68%] max-w-[765px] h-auto z-0 pointer-events-none">
+      <div className="absolute bottom-0 right-0 w-[68%] max-w-[765px] h-auto z-[1] pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
         <Image
           src="/hero-assets/paper-scrap-2.svg"
           alt=""
@@ -62,7 +62,7 @@ export function Hero() {
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 opacity-90"
+          className="absolute inset-0 opacity-15"
           style={{
             backgroundImage: "url(/hero-assets/noise-1.png)",
             backgroundSize: "200px",
@@ -81,11 +81,11 @@ export function Hero() {
         alt=""
         width={1373}
         height={570}
-        className="absolute bottom-0 left-0 w-[92%] max-w-[1020px] h-auto z-0 pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
+        className="absolute bottom-0 left-0 w-[83%] max-w-[918px] h-auto z-0 pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
         aria-hidden="true"
       />
       {/* Paper scrap 3 (black) - in front */}
-      <div className="absolute bottom-0 left-0 w-[92%] max-w-[1020px] h-auto z-[1] pointer-events-none">
+      <div className="absolute bottom-0 left-0 w-[83%] max-w-[918px] h-auto z-[1] pointer-events-none">
         <Image
           src="/hero-assets/paper-scrap-3.svg"
           alt=""
@@ -95,7 +95,7 @@ export function Hero() {
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 opacity-90"
+          className="absolute inset-0 opacity-15"
           style={{
             backgroundImage: "url(/hero-assets/noise-1.png)",
             backgroundSize: "200px",
@@ -127,7 +127,7 @@ export function Hero() {
           aria-hidden="true"
         />
         <div
-          className="absolute inset-0 opacity-90"
+          className="absolute inset-0 opacity-15"
           style={{
             backgroundImage: "url(/hero-assets/noise-1.png)",
             backgroundSize: "200px",
