@@ -49,10 +49,10 @@ export function Hero() {
         alt=""
         width={1006}
         height={478}
-        className="absolute bottom-0 right-0 w-[77%] max-w-[850px] h-auto z-0 pointer-events-none"
+        className="absolute bottom-0 right-0 w-[65%] max-w-[723px] h-auto z-[1] pointer-events-none"
         aria-hidden="true"
       />
-      <div className="absolute bottom-0 right-0 w-[68%] max-w-[765px] h-auto z-[1] pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
+      <div className="absolute bottom-0 right-0 w-[68%] max-w-[765px] h-auto z-0 pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]">
         <Image
           src="/hero-assets/paper-scrap-2.svg"
           alt=""
