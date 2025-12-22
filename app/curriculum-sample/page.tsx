@@ -71,15 +71,15 @@ export default function CurriculumSamplePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-[#F5F5F3]">
-        <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 py-16 md:py-24">
+      <main className="min-h-screen bg-[#F5F5F3] flex flex-col">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 py-16 md:py-24 flex-1 flex flex-col justify-center">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - Content */}
             <div className="space-y-8">
               {/* Main Heading */}
               <div className="space-y-6">
                 <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-medium text-heading leading-tight">
-                  Discover our comprehensive career exploration curriculum
+                  Get your free curriculum sample
                 </h1>
                 <p className="text-lg text-secondary leading-relaxed">
                   Download a free curriculum sample to see how our structured approach guides students through self-discovery, career exploration, and postsecondary planning.
@@ -96,7 +96,6 @@ export default function CurriculumSamplePage() {
                     "Overview of our curriculum framework and learning objectives",
                     "Sample lesson plans with detailed activities and assessments",
                     "Student engagement strategies and facilitation guides",
-                    "Examples of career exploration tools and resources",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="flex-shrink-0 mt-1">
@@ -137,17 +136,6 @@ export default function CurriculumSamplePage() {
                   </div>
                 )}
 
-                {/* Form Header */}
-                {!isSuccess && (
-                  <div className="mb-8">
-                    <h3 className="font-heading text-2xl font-medium text-heading mb-2">
-                      Get your free curriculum sample
-                    </h3>
-                    <p className="text-secondary text-sm">
-                      Fill out the form below and we&apos;ll send you a comprehensive sample of our curriculum materials.
-                    </p>
-                  </div>
-                )}
 
                 {/* Form */}
                 {!isSuccess && (
@@ -246,7 +234,7 @@ export default function CurriculumSamplePage() {
                       disabled={isSubmitting}
                       className="w-full h-12 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      {isSubmitting ? "Sending..." : "Download curriculum sample"}
+                      {isSubmitting ? "Sending..." : "Download"}
                       {!isSubmitting && <ArrowRight size={16} weight="bold" />}
                     </Button>
                   </form>
