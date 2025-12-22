@@ -35,7 +35,7 @@
   }
 
   h4 {
-    @apply font-heading font-medium text-3xl leading-tight;
+    @apply font-heading font-medium text-[26px] leading-tight;
   }
 
   h5 {

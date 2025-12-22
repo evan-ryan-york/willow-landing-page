@@ -23,13 +23,14 @@ const features: Feature[] = [
     customBgColor: "#D8FBDB",
   },
   {
-    title: "Plug-and-Play Curriculum",
+    title: "Career Discovery with Short-Form Videos",
     description:
-      "150+ fully facilitated, zero-prep lessons designed for 25 or 45-minute advisory blocks.",
+      "Meet students where they are with an engaging, video-first discovery experience. Willow offers a library of short-form, \"day-in-the-life\" social media videos that bring careers to life. Combined with psychometric assessments, students can explore high-growth, high-paying roles through the eyes of real professionals rather than just reading static job descriptions.",
     imagePlaceholder: "Scripted Lesson / Curriculum View",
+    customImage: "/feature-assets/short-videos.gif",
   },
   {
-    title: "Alma: Scaling Personalized Guidance Across Your District",
+    title: "Alma: Scaling Personalized Guidance",
     description:
       "Bridge the gap between student needs and counselor capacity with Alma, our AI-native mentor. By automating routine career exploration and data-driven program matching, Alma provides every student with 24/7 personalized guidance. This scalable support ensures no student falls through the cracks while freeing your staff to focus on high-impact, 1-on-1 interventions.",
     imagePlaceholder: "Alma AI Chat Interface",
@@ -82,24 +83,22 @@ function FeatureBlock({
       <div className={`${reverse ? "lg:order-2" : ""}`}>
         {feature.customImage ? (
           <div
-            className="w-full overflow-hidden p-[48px] pr-0"
+            className={`w-full overflow-hidden rounded-[12px] ${feature.customBgColor ? "p-8 lg:p-12" : ""}`}
             style={{
               backgroundColor: feature.customBgColor,
-              borderRadius: "12px",
             }}
           >
-            <div className="overflow-hidden -mt-4 -mb-6 -ml-4 pt-4 pb-6 pl-4">
-              <Image
-                src={feature.customImage}
-                alt={feature.title}
-                width={800}
-                height={600}
-                className="w-full h-auto"
-                style={{
-                  filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))",
-                }}
-              />
-            </div>
+            <Image
+              src={feature.customImage}
+              alt={feature.title}
+              width={800}
+              height={600}
+              unoptimized
+              className={`w-full h-auto block ${feature.customBgColor ? "" : "rounded-[12px]"}`}
+              style={{
+                filter: feature.customBgColor ? "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15))" : "none",
+              }}
+            />
           </div>
         ) : (
           <GreyPlaceholder aspectRatio="video" className="w-full">
@@ -112,10 +111,10 @@ function FeatureBlock({
 
       {/* Content */}
       <div className={`${reverse ? "lg:order-1" : ""}`}>
-        <h3 className="font-heading text-2xl sm:text-3xl font-medium text-heading mb-4">
+        <h4 className="text-heading mb-4">
           {feature.title}
-        </h3>
-        <p className="text-secondary text-lg leading-relaxed">
+        </h4>
+        <p className="text-secondary text-base leading-relaxed">
           {feature.description}
         </p>
       </div>
