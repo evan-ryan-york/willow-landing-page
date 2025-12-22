@@ -33,13 +33,118 @@ export function Hero() {
   });
 
   return (
-    <section ref={sectionRef} className="relative bg-gradient-to-b from-gray-50 to-white pt-16 md:pt-24 pb-0">
+    <section ref={sectionRef} className="relative overflow-hidden pt-16 md:pt-24 pb-0 bg-[#EDEAE5]">
+      {/* Paper texture background */}
+      <Image
+        src="/hero-assets/paper.avif"
+        alt=""
+        fill
+        className="object-cover z-0 pointer-events-none opacity-10"
+        aria-hidden="true"
+        priority
+      />
+      {/* Paper scrap decorations - Right side */}
+      <Image
+        src="/hero-assets/paper-scrap-1.svg"
+        alt=""
+        width={1006}
+        height={478}
+        className="absolute bottom-0 right-0 w-[77%] max-w-[850px] h-auto z-0 pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
+        aria-hidden="true"
+      />
+      <div className="absolute bottom-0 right-0 w-[68%] max-w-[765px] h-auto z-0 pointer-events-none">
+        <Image
+          src="/hero-assets/paper-scrap-2.svg"
+          alt=""
+          width={893}
+          height={445}
+          className="w-full h-auto"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 opacity-90"
+          style={{
+            backgroundImage: "url(/hero-assets/noise-1.png)",
+            backgroundSize: "200px",
+            maskImage: "url(/hero-assets/paper-scrap-2.svg)",
+            maskSize: "100% 100%",
+            WebkitMaskImage: "url(/hero-assets/paper-scrap-2.svg)",
+            WebkitMaskSize: "100% 100%",
+          }}
+          aria-hidden="true"
+        />
+      </div>
+      {/* Paper scrap decorations - Left side */}
+      {/* Paper scrap 4 (white) - behind */}
+      <Image
+        src="/hero-assets/paper-scrap-4.svg"
+        alt=""
+        width={1373}
+        height={570}
+        className="absolute bottom-0 left-0 w-[92%] max-w-[1020px] h-auto z-0 pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
+        aria-hidden="true"
+      />
+      {/* Paper scrap 3 (black) - in front */}
+      <div className="absolute bottom-0 left-0 w-[92%] max-w-[1020px] h-auto z-[1] pointer-events-none">
+        <Image
+          src="/hero-assets/paper-scrap-3.svg"
+          alt=""
+          width={1370}
+          height={564}
+          className="w-full h-auto"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 opacity-90"
+          style={{
+            backgroundImage: "url(/hero-assets/noise-1.png)",
+            backgroundSize: "200px",
+            maskImage: "url(/hero-assets/paper-scrap-3.svg)",
+            maskSize: "100% 100%",
+            WebkitMaskImage: "url(/hero-assets/paper-scrap-3.svg)",
+            WebkitMaskSize: "100% 100%",
+          }}
+          aria-hidden="true"
+        />
+      </div>
+      {/* Paper scrap 6 (white) - behind */}
+      <Image
+        src="/hero-assets/paper-scrap-6.svg"
+        alt=""
+        width={924}
+        height={519}
+        className="absolute bottom-0 left-0 w-[30%] max-w-[319px] h-auto z-[2] pointer-events-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
+        aria-hidden="true"
+      />
+      {/* Paper scrap 5 (black) - in front */}
+      <div className="absolute bottom-0 left-0 w-[27%] max-w-[298px] h-auto z-[3] pointer-events-none">
+        <Image
+          src="/hero-assets/paper-scrap-5.svg"
+          alt=""
+          width={930}
+          height={458}
+          className="w-full h-auto"
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 opacity-90"
+          style={{
+            backgroundImage: "url(/hero-assets/noise-1.png)",
+            backgroundSize: "200px",
+            maskImage: "url(/hero-assets/paper-scrap-5.svg)",
+            maskSize: "100% 100%",
+            WebkitMaskImage: "url(/hero-assets/paper-scrap-5.svg)",
+            WebkitMaskSize: "100% 100%",
+          }}
+          aria-hidden="true"
+        />
+      </div>
       {/* Text Content - Centered */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center px-5 md:px-10 max-w-4xl mx-auto"
+        className="relative z-10 text-center px-5 md:px-10 max-w-4xl mx-auto"
       >
         <h1 className="font-heading text-[32px] md:text-5xl lg:text-[60px] font-medium text-heading mb-6 leading-tight">
           The &ldquo;Science of Reading&rdquo; for Postsecondary Success
@@ -64,7 +169,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-12 md:mt-16 px-5 md:px-10 lg:px-16 max-w-7xl mx-auto"
+        className="relative z-10 mt-12 md:mt-16 px-5 md:px-10 lg:px-16 max-w-7xl mx-auto"
       >
         <div className="relative w-[76%] mx-auto -translate-x-[5%]">
           {/* UI Frame - Base layer */}
