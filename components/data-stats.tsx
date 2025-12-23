@@ -14,7 +14,7 @@ const stats: Stat[] = [
     number: "60%",
     label: "of jobs face AI disruption",
     subtext:
-      "As technology rapidly reshapes the workforce, postsecondary education has never been more critical.",
+      "As technology rapidly reshapes the workforce, quality postsecondary education and durable skills have never been more important.",
   },
   {
     number: "240+",
