@@ -139,7 +139,7 @@ function ComparisonTableSection() {
         { status: "x", note: "" },
         {
           status: "partial",
-          note: "Mission oriented, but not PBC or nonprofit",
+          note: "Mission oriented, but not nonprofit or PBC.",
         },
       ],
     },
