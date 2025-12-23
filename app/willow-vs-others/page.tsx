@@ -78,7 +78,7 @@ function KPICardsSection() {
     {
       icon: Book,
       heading: "150+ Scripted Lessons",
-      body: "Zero-prep, turnkey curriculum that fits directly into existing advisory blocks. No additional work for overstretched staff.",
+      body: "Low-prep, turnkey curriculum that fits directly into existing advisory blocks. No additional work for overstretched staff.",
     },
     {
       icon: Path,
