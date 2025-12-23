@@ -184,7 +184,7 @@ export function Hero() {
           Career & postsecondary readiness built for economic mobility
         </h1>
         <p className="text-lg text-secondary mb-8 max-w-2xl mx-auto">
-          An AI-native curriculum and platform that transforms exploration into actionable student pathways at scale.
+          A curriculum and platform to purpose, AI fluency, and postsecondary success for your students.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/curriculum-sample">
