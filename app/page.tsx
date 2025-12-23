@@ -4,7 +4,8 @@ import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { LogoCarousel } from "@/components/logo-carousel";
 import { DataStats } from "@/components/data-stats";
-import { DiscoveryBridge } from "@/components/discovery-bridge";
+// import { DiscoveryBridge } from "@/components/discovery-bridge";
+import { DiscoverySectionV3 } from "@/components/discovery-section-v3";
 import { FeaturesSection } from "@/components/features-section";
 import { HowItWorks } from "@/components/how-it-works";
 import { TestimonialsSection } from "@/components/testimonials-section";
@@ -24,7 +25,8 @@ export default function Home() {
         <Hero />
         <LogoCarousel />
         <DataStats />
-        <DiscoveryBridge />
+        {/* <DiscoveryBridge /> */}
+        <DiscoverySectionV3 />
         <FeaturesSection />
         <HowItWorks />
         <TestimonialsSection />
