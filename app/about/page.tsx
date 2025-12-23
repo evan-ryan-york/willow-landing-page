@@ -157,7 +157,7 @@ export default function AboutPage() {
             {/* Closing statement */}
             <div className="max-w-3xl mx-auto px-5 md:px-10 lg:px-16">
               <p className="text-gray-600 text-base leading-relaxed">
-                For a student taking on debt, this isn&apos;t just disappointing—it&apos;s devastating. We call it &ldquo;random acts of dual enrollment&rdquo; or &ldquo;prestige chasing,&rdquo; but the result is the same: students dropping out with debt and no clear path forward.
+                Quality college and professional programs can be life-changing. However, the inverse is true too. Dropping out with debt is the WORST outcome for young people. We have to be honest with our students about what programs are good, and which to avoid.
               </p>
             </div>
           </motion.div>
@@ -192,7 +192,7 @@ export default function AboutPage() {
                 The Willow solution: beyond &ldquo;college vs. career&rdquo;
               </h4>
               <p className="text-gray-600 text-lg leading-relaxed">
-                At Willow, we don&apos;t believe in a &ldquo;college vs. workforce&rdquo; binary. It&apos;s about college AND professional pathways. Equity requires transparency about costs, outcomes, and quality.
+                At Willow, we don&apos;t believe in a &ldquo;college vs. workforce&rdquo; binary. It&apos;s about college, professional programs, and good first-jobs. Equity requires transparency about costs, outcomes, and quality.
               </p>
             </div>
 
@@ -269,7 +269,7 @@ export default function AboutPage() {
                   We are a Public Benefit Corporation founded in 2023 with a &ldquo;North Star&rdquo; goal: <strong className="text-heading">Help 10 million students realize their full potential by 2033.</strong>
                 </p>
                 <p>
-                  It&apos;s working. In our early pilots, students using Willow were 50% more likely to choose high-ROI programs compared to their peers. We&apos;re currently partnering with forward-thinking districts like DSST Public Schools to prove that when students have better information, they make better lives.
+                  It&apos;s working. In our early pilots, students using Willow were 50% more likely to choose high-ROI programs compared to their peers. We&apos;re currently partnering with some of the most innovative schools systems in the country like Achievement First and DSST Public Schools to prove that when students have better information, they make better lives.
                 </p>
                 <p>
                   Join us in building a better map for the next generation. Onwards,
@@ -288,7 +288,7 @@ export default function AboutPage() {
 
         {/* Team Section */}
         <section className="py-16 md:py-20 bg-gray-50">
-          <div className="max-w-3xl mx-auto px-5 md:px-10 lg:px-16">
+          <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
             <motion.div
               ref={teamRef}
               initial={{ opacity: 0, y: 30 }}
@@ -301,33 +301,66 @@ export default function AboutPage() {
               <p className="text-secondary text-base leading-relaxed mb-8">
                 We&apos;re a group of educators, designers, and builders who believe the system is fixable.
               </p>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-1 bg-[#ACF7B2] rounded-full" />
-                  <div>
-                    <a href="https://www.linkedin.com/in/jamescryan/" target="_blank" rel="noopener noreferrer" className="font-semibold text-heading hover:underline">James Cryan, Founder &amp; CEO</a>
-                    <p className="text-secondary text-base leading-relaxed">
-                      The founder and former CEO of Rocky Mountain Prep—one of Colorado&apos;s most successful public charter school networks—James carries with him over 15 years of experience in the education sector. He believes all learners deserve support to navigate their post-secondary education journey with confidence.
-                    </p>
-                  </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div>
+                  <h3 className="font-heading text-lg font-semibold text-heading mb-2">James Cryan</h3>
+                  <p className="text-secondary text-sm leading-relaxed mb-2">
+                    The founder and former CEO of Rocky Mountain Prep—one of Colorado&apos;s most successful public charter school networks—James carries with him over 15 years of experience in the education sector.
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/jamescryan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[#0A66C2] hover:text-[#004182] transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span className="text-sm font-medium">LinkedIn</span>
+                  </a>
                 </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-1 bg-[#ACF7B2] rounded-full" />
-                  <div>
-                    <a href="https://www.linkedin.com/in/jaime-hudgins/" target="_blank" rel="noopener noreferrer" className="font-semibold text-heading hover:underline">Jaime Hudgins</a>
-                    <p className="text-secondary text-base leading-relaxed">
-                      Lorem ipsum.
-                    </p>
-                  </div>
+                <div>
+                  <h3 className="font-heading text-lg font-semibold text-heading mb-2">Jaime Hudgins</h3>
+                  <p className="text-secondary text-sm leading-relaxed mb-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/jaime-hudgins/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[#0A66C2] hover:text-[#004182] transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span className="text-sm font-medium">LinkedIn</span>
+                  </a>
                 </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-1 bg-[#ACF7B2] rounded-full" />
-                  <div>
-                    <a href="https://www.linkedin.com/in/ryan-york-148356a9/" target="_blank" rel="noopener noreferrer" className="font-semibold text-heading hover:underline">Ryan York, Chief Product &amp; Technology Officer</a>
-                    <p className="text-secondary text-base leading-relaxed">
-                      Ryan has worked in education for 18 years as a teacher, instructional coach, principal, and charter school founder/co-CEO. He began writing software over a decade ago, creating online tools for teachers. He went on to design a computer science curriculum and learning management platform that served over 10,000 students and won the Sally Ride &amp; Deloitte National Award for Innovation.
-                    </p>
-                  </div>
+                <div>
+                  <h3 className="font-heading text-lg font-semibold text-heading mb-2">Liz Wise</h3>
+                  <p className="text-secondary text-sm leading-relaxed mb-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/lizwise487/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[#0A66C2] hover:text-[#004182] transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span className="text-sm font-medium">LinkedIn</span>
+                  </a>
+                </div>
+                <div>
+                  <h3 className="font-heading text-lg font-semibold text-heading mb-2">Ryan York</h3>
+                  <p className="text-secondary text-sm leading-relaxed mb-2">
+                    Ryan has worked in education for 18 years as a teacher, instructional coach, principal, and charter school founder/co-CEO.
+                  </p>
+                  <a
+                    href="https://www.linkedin.com/in/ryan-york-148356a9/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[#0A66C2] hover:text-[#004182] transition-colors"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span className="text-sm font-medium">LinkedIn</span>
+                  </a>
                 </div>
               </div>
             </motion.div>
