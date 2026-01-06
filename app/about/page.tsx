@@ -72,7 +72,7 @@ export default function AboutPage() {
                   My wife Liz is a pediatrician. Anyone who knows us well knows that I delight in drawing way too many comparisons between the challenges in our healthcare system and our education system.
                 </p>
                 <p>
-                  In medicine, we don&apos;t just give a patient a &ldquo;passing grade&rdquo; and send them on their way; we look at outcomes. Yet, in education, we&apos;ve spent decades focusing on the input (getting students into college) without enough honesty about the output (whether they actually graduate and find economic mobility).
+                  In medicine, we don&apos;t just give a patient a &ldquo;passing grade&rdquo; and send them on their way; we measure what&apos;s working, and not. Yet, in education, we&apos;ve spent decades focusing on the input (getting students into college) without enough honesty about the output (whether they actually graduate and find economic mobility).
                 </p>
                 <p>
                   I spent years leading charter schools, and I&apos;ll be the first to admit: I was wrong about a lot of things. I used to think a &ldquo;college-for-all&rdquo; mantra was the only way to ensure equity. But the data tells a different, more complicated story.
@@ -173,7 +173,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="text-heading text-xl md:text-2xl leading-relaxed"
             >
-              We&apos;ve built a student success platform that simplifies the noise. Whether it&apos;s an apprenticeship, a certification, or a four-year degree, we help students find their best-fit, best-quality education next step.
+              We&apos;ve built a student success platform that cuts through the noise. Whether it&apos;s an apprenticeship, a certification, or a four-year degree, we help students find their best-fit, best-quality education next step.
             </motion.p>
           </div>
         </section>
@@ -192,7 +192,7 @@ export default function AboutPage() {
                 The Willow solution: beyond &ldquo;college vs. career&rdquo;
               </h4>
               <p className="text-gray-600 text-lg leading-relaxed">
-                At Willow, we don&apos;t believe in a &ldquo;college vs. workforce&rdquo; binary. It&apos;s about college, professional programs, and good first-jobs. Equity requires transparency about costs, outcomes, and quality.
+                At Willow, we don&apos;t believe in a &ldquo;college vs. workforce&rdquo; binary. It&apos;s about college, professional programs, and good first-jobs. Equity requires honesty about costs, outcomes, and quality.
               </p>
             </div>
 
@@ -303,9 +303,10 @@ export default function AboutPage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div>
-                  <h3 className="font-heading text-lg font-semibold text-heading mb-2">James Cryan</h3>
+                  <h3 className="font-heading text-lg font-semibold text-heading">James Cryan</h3>
+                  <p className="text-secondary text-sm font-medium mb-2">Founder & CEO</p>
                   <p className="text-secondary text-sm leading-relaxed mb-2">
-                    The founder and former CEO of Rocky Mountain Prep—one of Colorado&apos;s most successful public charter school networks—James carries with him over 15 years of experience in the education sector.
+                  The founder and former CEO of Rocky Mountain Prep, one of Colorado's most successful public charter school networks. James has almost two decades of experience as a public school teacher and leader.
                   </p>
                   <a
                     href="https://www.linkedin.com/in/jamescryan/"
@@ -318,7 +319,8 @@ export default function AboutPage() {
                   </a>
                 </div>
                 <div>
-                  <h3 className="font-heading text-lg font-semibold text-heading mb-2">Jaime Hudgins</h3>
+                  <h3 className="font-heading text-lg font-semibold text-heading">Jaime Hudgins</h3>
+                  <p className="text-secondary text-sm font-medium mb-2">Chief Academic Officer</p>
                   <p className="text-secondary text-sm leading-relaxed mb-2">
                     Jaime brings over 17 years in education as a teacher, curriculum specialist, assistant principal, and Chief Academic Officer. She&apos;s led academics for a five-school network and scaled instructional practices nationally, and her deepest passion lives in future-focused curriculum—the work that helps students discover who they are and chart their own paths forward.
                   </p>
@@ -333,10 +335,10 @@ export default function AboutPage() {
                   </a>
                 </div>
                 <div>
-                  <h3 className="font-heading text-lg font-semibold text-heading mb-2">Liz Wise</h3>
+                  <h3 className="font-heading text-lg font-semibold text-heading">Liz Wise</h3>
+                  <p className="text-secondary text-sm font-medium mb-2">Quality Assurance & Operations</p>
                   <p className="text-secondary text-sm leading-relaxed mb-2">
-                    Liz brings several years of experience in education operations, with a focus on enrollment coordination, social media and quality assurance.
-                  </p>
+Liz has lived, breathed, and led successful school operations, with a focus on enrollment coordination, social media and quality assurance.                  </p>
                   <a
                     href="https://www.linkedin.com/in/lizwise487/"
                     target="_blank"
@@ -348,7 +350,8 @@ export default function AboutPage() {
                   </a>
                 </div>
                 <div>
-                  <h3 className="font-heading text-lg font-semibold text-heading mb-2">Ryan York</h3>
+                  <h3 className="font-heading text-lg font-semibold text-heading">Ryan York</h3>
+                  <p className="text-secondary text-sm font-medium mb-2">Chief Product & Technology Officer</p>
                   <p className="text-secondary text-sm leading-relaxed mb-2">
                     Ryan has worked in education for 18 years as a teacher, instructional coach, principal, and charter school founder/co-CEO.
                   </p>
