@@ -215,9 +215,8 @@ export function Hero() {
               alt="Willow curriculum interface"
               width={1223}
               height={919}
-              quality={100}
+              quality={80}
               sizes="(max-width: 768px) 90vw, (max-width: 1200px) 76vw, 900px"
-              unoptimized
               className="w-full h-auto"
               priority
             />
@@ -233,9 +232,8 @@ export function Hero() {
               alt="Curriculum slide preview"
               width={927}
               height={532}
-              quality={100}
+              quality={80}
               sizes="(max-width: 768px) 60vw, 500px"
-              unoptimized
               className="w-full h-auto drop-shadow-2xl"
               priority
             />

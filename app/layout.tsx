@@ -17,6 +17,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://willoweducation.com"),
   title: "Willow Education | Career Exploration Curriculum Platform",
   icons: {
     icon: "/favicon.svg",

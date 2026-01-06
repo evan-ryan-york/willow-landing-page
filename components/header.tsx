@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { List, X } from "phosphor-react";
 import { cn } from "@/lib/utils";
 import { WillowLogo } from "./willow-logo";
@@ -15,14 +15,23 @@ const navLinks = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const ticking = useRef(false);
+
+  const updateScrolled = useCallback(() => {
+    setScrolled(window.scrollY > 20);
+    ticking.current = false;
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking.current) {
+        requestAnimationFrame(updateScrolled);
+        ticking.current = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [updateScrolled]);
 
   return (
     <header

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export function LogoCarousel() {
@@ -36,36 +35,34 @@ export function LogoCarousel() {
     { id: 29, src: "/partner-logos/opportunity_trust.png", alt: "Next Prep (Opportunity Trust)" },
   ];
 
-  // Logo dimensions: 102px width + 40px gap = 142px per logo
-  // Total width calculated dynamically based on number of logos
-  const logoWidth = 112; // 10% larger
-  const gapWidth = 40; // gap-10 = 2.5rem = 40px
-  const totalSetWidth = logos.length * (logoWidth + gapWidth);
+  // 28 logos * 112px + 27 gaps * 40px = 4216px per set
+  const setWidth = logos.length * 112 + (logos.length - 1) * 40;
 
   return (
     <section className="py-12 bg-white overflow-hidden">
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(-${setWidth}px, 0, 0);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 80s linear infinite;
+          will-change: transform;
+        }
+      `}</style>
       <div className="relative">
         {/* Gradient overlays for fade effect */}
         <div className="absolute left-0 top-0 bottom-0 w-56 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute right-0 top-0 bottom-0 w-56 bg-gradient-to-l from-white to-transparent z-10" />
 
-        {/* Scrolling container */}
-        <motion.div
-          className="flex gap-10 items-center"
-          animate={{
-            x: [0, -totalSetWidth],
-          }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 36,
-              ease: "linear",
-            },
-          }}
-        >
-          {/* Render logos 4 times for seamless infinite scroll */}
-          {[...Array(4)].map((_, setIndex) =>
+        {/* Scrolling container - CSS animation for smooth mobile performance */}
+        <div className="flex gap-10 items-center animate-scroll">
+          {/* Render logos 2 times for seamless loop */}
+          {[...Array(2)].map((_, setIndex) =>
             logos.map((logo, logoIndex) => (
               <div
                 key={`${setIndex}-${logo.id}-${logoIndex}`}
@@ -81,7 +78,7 @@ export function LogoCarousel() {
               </div>
             ))
           )}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

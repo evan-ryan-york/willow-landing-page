@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 interface Testimonial {
@@ -67,23 +67,25 @@ function TestimonialCard({
   index,
   onDragStart,
   onDragEnd,
+  isMobile,
 }: {
   testimonial: Testimonial;
   index: number;
   onDragStart: () => void;
   onDragEnd: () => void;
+  isMobile: boolean;
 }) {
   const initial = testimonial.author.charAt(0).toUpperCase();
 
   return (
     <motion.div
-      drag
+      drag={!isMobile}
       dragSnapToOrigin
       dragElastic={0.3}
       onDragStart={onDragStart}
       onDragEnd={onDragEnd}
-      whileDrag={{ scale: 1.05, zIndex: 50 }}
-      className="testimonial-card bg-white p-6 shadow-lg flex-shrink-0 w-[320px] md:w-[380px] cursor-grab active:cursor-grabbing"
+      whileDrag={!isMobile ? { scale: 1.05, zIndex: 50 } : undefined}
+      className={`testimonial-card bg-white p-6 shadow-lg flex-shrink-0 w-[320px] md:w-[380px] ${!isMobile ? 'cursor-grab active:cursor-grabbing' : ''}`}
       style={{
         translateY: index % 2 === 0 ? 0 : 40,
         borderRadius: '12px',
@@ -125,6 +127,14 @@ function TestimonialCard({
 export function TestimonialsSection() {
   const [isDragging, setIsDragging] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Duplicate testimonials for seamless infinite scroll
   const duplicatedTestimonials = [...testimonials, ...testimonials];
@@ -170,6 +180,7 @@ export function TestimonialsSection() {
               index={index}
               onDragStart={() => setIsDragging(true)}
               onDragEnd={() => setIsDragging(false)}
+              isMobile={isMobile}
             />
           ))}
         </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useCallback, useEffect } from "react";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Star, Briefcase, Target, BookOpen, Heart, Quotes, EnvelopeSimple } from "phosphor-react";
 import quizQuestions from "@/lib/data/quiz-questions.json";
 import personalityTypes from "@/lib/data/personality-types.json";
@@ -685,9 +686,11 @@ export default function PersonalityQuizPage() {
             <div className="md:flex md:gap-8">
               {/* Personality Type Image */}
               <div className="mb-6 md:mb-0 md:flex-shrink-0">
-                <img
+                <Image
                   src={`/personality-type-images/${personalityResult.id.toUpperCase().replace(/-/g, "")}.jpg`}
                   alt={personalityResult.title}
+                  width={320}
+                  height={320}
                   className="w-full md:w-80 h-auto rounded-xl object-cover"
                 />
               </div>
