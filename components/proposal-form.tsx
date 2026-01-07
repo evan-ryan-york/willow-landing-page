@@ -150,7 +150,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 type="text"
                 id="firstName"
                 className={cn(
-                  "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
+                  "w-full h-12 md:h-10 px-4 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
                   errors.firstName ? "border-gray-400" : "border-gray-300"
                 )}
               />
@@ -173,7 +173,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 type="text"
                 id="lastName"
                 className={cn(
-                  "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
+                  "w-full h-12 md:h-10 px-4 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
                   errors.lastName ? "border-gray-400" : "border-gray-300"
                 )}
               />
@@ -199,7 +199,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 type="email"
                 id="email"
                 className={cn(
-                  "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
+                  "w-full h-12 md:h-10 px-4 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
                   errors.email ? "border-gray-400" : "border-gray-300"
                 )}
               />
@@ -222,7 +222,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 type="tel"
                 id="phone"
                 className={cn(
-                  "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
+                  "w-full h-12 md:h-10 px-4 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
                   errors.phone ? "border-gray-400" : "border-gray-300"
                 )}
               />
@@ -247,7 +247,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
               type="text"
               id="jobTitle"
               className={cn(
-                "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
+                "w-full h-12 md:h-10 px-4 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
                 errors.jobTitle ? "border-gray-400" : "border-gray-300"
               )}
             />
@@ -271,7 +271,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
               type="text"
               id="schoolName"
               className={cn(
-                "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
+                "w-full h-12 md:h-10 px-4 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
                 errors.schoolName ? "border-gray-400" : "border-gray-300"
               )}
             />
@@ -295,7 +295,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 {...register("schoolSize")}
                 id="schoolSize"
                 className={cn(
-                  "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
+                  "w-full h-12 md:h-10 px-4 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
                   errors.schoolSize ? "border-gray-400" : "border-gray-300"
                 )}
               >
@@ -324,7 +324,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
                 type="text"
                 id="state"
                 className={cn(
-                  "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
+                  "w-full h-12 md:h-10 px-4 border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors",
                   errors.state ? "border-gray-400" : "border-gray-300"
                 )}
               />
@@ -349,7 +349,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
               type="text"
               id="interests"
               placeholder="e.g., Career curriculum, Professional development, Platform access"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors"
+              className="w-full h-12 md:h-10 px-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors"
             />
           </div>
 
@@ -366,7 +366,7 @@ export function ProposalForm({ isOpen, onClose }: ProposalFormProps) {
               id="message"
               rows={4}
               placeholder="Tell us more about your needs..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors resize-none"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-colors resize-none"
             />
           </div>
 

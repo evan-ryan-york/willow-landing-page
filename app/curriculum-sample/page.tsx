@@ -70,7 +70,7 @@ export default function CurriculumSamplePage() {
     <>
       <Header />
       <main className="min-h-screen bg-[#F5F5F3] flex flex-col">
-        <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 py-16 md:py-24 flex-1 flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16 pt-32 pb-16 md:pt-40 md:pb-24 flex-1 flex flex-col justify-center">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - Content */}
             <div className="space-y-8">
@@ -167,7 +167,7 @@ export default function CurriculumSamplePage() {
                         id="firstName"
                         placeholder="First name"
                         className={cn(
-                          "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#062F29] focus:border-transparent transition-colors text-base",
+                          "w-full h-12 px-4 border rounded-lg focus:ring-2 focus:ring-[#062F29] focus:border-transparent transition-colors text-base",
                           errors.firstName ? "border-red-400" : "border-gray-300"
                         )}
                       />
@@ -192,7 +192,7 @@ export default function CurriculumSamplePage() {
                         id="lastName"
                         placeholder="Last name"
                         className={cn(
-                          "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#062F29] focus:border-transparent transition-colors text-base",
+                          "w-full h-12 px-4 border rounded-lg focus:ring-2 focus:ring-[#062F29] focus:border-transparent transition-colors text-base",
                           errors.lastName ? "border-red-400" : "border-gray-300"
                         )}
                       />
@@ -217,7 +217,7 @@ export default function CurriculumSamplePage() {
                         id="email"
                         placeholder="Email address"
                         className={cn(
-                          "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#062F29] focus:border-transparent transition-colors text-base",
+                          "w-full h-12 px-4 border rounded-lg focus:ring-2 focus:ring-[#062F29] focus:border-transparent transition-colors text-base",
                           errors.email ? "border-red-400" : "border-gray-300"
                         )}
                       />
