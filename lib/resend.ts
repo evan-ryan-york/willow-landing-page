@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const NOTIFY_EMAIL = "ryan@willowed.org";
+const NOTIFY_EMAIL = "james@willowed.org";
 const FROM_EMAIL = "notifications@willowed.org";
 
 function getResendClient() {
