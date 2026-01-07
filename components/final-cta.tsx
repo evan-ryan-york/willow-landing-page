@@ -29,10 +29,11 @@ export function FinalCTA({ headline, singleButton }: FinalCTAProps = {}) {
           className="relative bg-[#ACF7B2] rounded-[12px] p-10 md:p-[80px] text-center overflow-hidden"
         >
           <Image
-            src="/cta-bg.png"
+            src="/cta-bg.jpg"
             alt=""
             fill
             className="object-cover opacity-10 pointer-events-none"
+            aria-hidden="true"
           />
           <div className="relative z-10">
             <h3 className="font-heading text-2xl md:text-3xl font-medium text-heading mb-8 max-w-4xl mx-auto leading-tight">

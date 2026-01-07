@@ -154,10 +154,9 @@ export function Hero() {
         />
       </div>
 
-      {/* Decorative paper scraps - hidden on mobile, staged reveal on desktop */}
-      {!isMobile && (
-        <>
-          {/* Paper scrap decorations - Right side */}
+      {/* Decorative paper scraps - staged reveal */}
+      <>
+        {/* Paper scrap decorations - Right side */}
           <div
             className="absolute bottom-[-2px] right-0 w-[65%] max-w-[723px] h-auto z-[1] pointer-events-none"
             style={{
@@ -338,8 +337,7 @@ export function Hero() {
               aria-hidden="true"
             />
           </div>
-        </>
-      )}
+      </>
 
       {/* Text Content - Centered */}
       <motion.div
@@ -409,45 +407,42 @@ export function Hero() {
           </div>
 
           {/* Slide Image - On top, positioned right, smooth scroll animation */}
-          {/* Hidden on mobile for performance */}
-          {!isMobile && (
-            <motion.div
-              style={shouldAnimate ? { x: slideX, y: slideY } : undefined}
-              className="absolute top-[15%] right-[-30%] w-[62%] z-10"
-            >
-              {/* Aspect ratio placeholder for slide */}
-              <div className="relative [aspect-ratio:927/532]">
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-[#F8F6F3] to-[#EBE7E0] rounded-lg shadow-2xl"
-                  style={{
-                    opacity: secondaryLoaded ? 0 : 1,
-                    transition: FADE_TRANSITION,
-                  }}
-                  aria-hidden="true"
-                />
-                <Image
-                  src="/hero-assets/hero-img-slide.png"
-                  alt="Curriculum slide preview"
-                  width={927}
-                  height={532}
-                  quality={80}
-                  sizes="(max-width: 768px) 60vw, 500px"
-                  className="w-full h-auto drop-shadow-2xl"
-                  style={{
-                    opacity: secondaryLoaded ? 1 : 0,
-                    transition: FADE_TRANSITION,
-                  }}
-                  priority
-                  onLoad={handleSecondaryLoad}
-                />
-              </div>
-            </motion.div>
-          )}
+          <motion.div
+            style={shouldAnimate ? { x: slideX, y: slideY } : undefined}
+            className="absolute top-[8%] md:top-[15%] right-[-20%] md:right-[-30%] w-[55%] md:w-[62%] z-10"
+          >
+            {/* Aspect ratio placeholder for slide */}
+            <div className="relative [aspect-ratio:927/532]">
+              <div
+                className="absolute inset-0 bg-gradient-to-br from-[#F8F6F3] to-[#EBE7E0] rounded-lg shadow-2xl"
+                style={{
+                  opacity: secondaryLoaded ? 0 : 1,
+                  transition: FADE_TRANSITION,
+                }}
+                aria-hidden="true"
+              />
+              <Image
+                src="/hero-assets/hero-img-slide.png"
+                alt="Curriculum slide preview"
+                width={927}
+                height={532}
+                quality={80}
+                sizes="(max-width: 768px) 50vw, 500px"
+                className="w-full h-auto drop-shadow-2xl"
+                style={{
+                  opacity: secondaryLoaded ? 1 : 0,
+                  transition: FADE_TRANSITION,
+                }}
+                priority
+                onLoad={handleSecondaryLoad}
+              />
+            </div>
+          </motion.div>
         </div>
       </motion.div>
 
       {/* Preload decorative images after critical content is ready */}
-      {criticalLoaded && !decorativeLoaded && !isMobile && (
+      {criticalLoaded && !decorativeLoaded && (
         <DecorativePreloader
           images={DECORATIVE_IMAGES}
           onComplete={() => {
@@ -456,15 +451,6 @@ export function Hero() {
             } else {
               setDecorativeLoaded(true);
             }
-          }}
-        />
-      )}
-
-      {/* On mobile, mark decorative as loaded immediately since we don't show them */}
-      {isMobile && !decorativeLoaded && criticalLoaded && (
-        <div
-          ref={(el) => {
-            if (el) setDecorativeLoaded(true);
           }}
         />
       )}

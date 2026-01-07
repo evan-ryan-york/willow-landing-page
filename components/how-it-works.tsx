@@ -65,7 +65,7 @@ export function HowItWorks() {
               <div className="w-16 h-16 mb-4 relative">
                 <Image
                   src={step.icon}
-                  alt=""
+                  alt={`${step.title} icon`}
                   fill
                   className="object-contain"
                 />

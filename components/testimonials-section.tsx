@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useMotionValue, useAnimation, PanInfo } from "framer-motion";
 
 interface Testimonial {
   quote: string;
@@ -128,6 +128,10 @@ export function TestimonialsSection() {
   const [isDragging, setIsDragging] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isTouching, setIsTouching] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -136,8 +140,42 @@ export function TestimonialsSection() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current);
+      }
+    };
+  }, []);
+
   // Duplicate testimonials for seamless infinite scroll
   const duplicatedTestimonials = [...testimonials, ...testimonials];
+
+  // Card width + gap for drag constraints
+  const cardWidth = isMobile ? 320 : 380;
+  const gap = 24; // gap-6 = 1.5rem = 24px
+  const totalWidth = duplicatedTestimonials.length * (cardWidth + gap);
+
+  const handleDragStart = () => {
+    setIsTouching(true);
+    // Clear any pending resume timeout
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+      resumeTimeoutRef.current = null;
+    }
+  };
+
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    // Give user time to read before resuming animation
+    resumeTimeoutRef.current = setTimeout(() => {
+      setIsTouching(false);
+      // Reset position smoothly for next animation cycle
+      x.set(0);
+    }, 3000); // 3 second delay before resuming
+  };
+
+  const isPaused = isDragging || isHovered || isTouching;
 
   return (
     <section
@@ -152,7 +190,7 @@ export function TestimonialsSection() {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative">
+      <div className="relative" ref={containerRef}>
         {/* Fade gradients on edges */}
         <div
           className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
@@ -167,23 +205,47 @@ export function TestimonialsSection() {
           }}
         />
 
-        {/* Scrolling Track */}
-        <div
-          className={`flex items-start gap-6 testimonial-carousel py-8 ${isDragging || isHovered ? 'paused' : ''}`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {duplicatedTestimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              testimonial={testimonial}
-              index={index}
-              onDragStart={() => setIsDragging(true)}
-              onDragEnd={() => setIsDragging(false)}
-              isMobile={isMobile}
-            />
-          ))}
-        </div>
+        {/* Scrolling Track - Draggable on mobile */}
+        {isMobile ? (
+          <motion.div
+            className={`flex items-start gap-6 py-8 cursor-grab active:cursor-grabbing ${isPaused ? '' : 'testimonial-carousel'}`}
+            drag="x"
+            dragConstraints={{ left: -totalWidth / 2, right: 0 }}
+            dragElastic={0.1}
+            onDragStart={handleDragStart}
+            onDragEnd={handleDragEnd}
+            style={{ x }}
+          >
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={index}
+                testimonial={testimonial}
+                index={index}
+                onDragStart={() => setIsDragging(true)}
+                onDragEnd={() => setIsDragging(false)}
+                isMobile={isMobile}
+              />
+            ))}
+          </motion.div>
+        ) : (
+          <div
+            className={`flex items-start gap-6 testimonial-carousel py-8 ${isPaused ? 'paused' : ''}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={index}
+                testimonial={testimonial}
+                index={index}
+                onDragStart={() => setIsDragging(true)}
+                onDragEnd={() => setIsDragging(false)}
+                isMobile={isMobile}
+              />
+            ))}
+          </div>
+        )}
+
       </div>
     </section>
   );

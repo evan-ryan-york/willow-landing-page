@@ -6,21 +6,21 @@ import { Button } from "./button";
 
 export function DiscoverySectionV3() {
   const leftImages = [
-    "/personality-type-images/ARTISTIC_OPENNESS.jpg",
-    "/personality-type-images/SOCIAL_AGREEABLENESS.jpg",
-    "/personality-type-images/ENTERPRISING_EXTRAVERSION.jpg",
+    { src: "/personality-type-images/ARTISTIC_OPENNESS.jpg", alt: "Artistic and creative personality type" },
+    { src: "/personality-type-images/SOCIAL_AGREEABLENESS.jpg", alt: "Social and agreeable personality type" },
+    { src: "/personality-type-images/ENTERPRISING_EXTRAVERSION.jpg", alt: "Enterprising and extraverted personality type" },
   ];
 
   const rightImages = [
-    "/personality-type-images/INVESTIGATIVE_OPENNESS.jpg",
-    "/personality-type-images/REALISTIC_CONSCIENTIOUSNESS.jpg",
-    "/personality-type-images/CONVENTIONAL_EMOTIONALSTABILITY.jpg",
+    { src: "/personality-type-images/INVESTIGATIVE_OPENNESS.jpg", alt: "Investigative and curious personality type" },
+    { src: "/personality-type-images/REALISTIC_CONSCIENTIOUSNESS.jpg", alt: "Realistic and conscientious personality type" },
+    { src: "/personality-type-images/CONVENTIONAL_EMOTIONALSTABILITY.jpg", alt: "Conventional and emotionally stable personality type" },
   ];
 
   const mobileImages = [
-    "/personality-type-images/ARTISTIC_OPENNESS.jpg",
-    "/personality-type-images/SOCIAL_AGREEABLENESS.jpg",
-    "/personality-type-images/ENTERPRISING_EXTRAVERSION.jpg",
+    { src: "/personality-type-images/ARTISTIC_OPENNESS.jpg", alt: "Artistic and creative personality type" },
+    { src: "/personality-type-images/SOCIAL_AGREEABLENESS.jpg", alt: "Social and agreeable personality type" },
+    { src: "/personality-type-images/ENTERPRISING_EXTRAVERSION.jpg", alt: "Enterprising and extraverted personality type" },
   ];
 
   return (
@@ -28,7 +28,7 @@ export function DiscoverySectionV3() {
       {/* Mobile/Tablet: 3 images in a row above text */}
       <div className="flex justify-center mb-10 xl:hidden">
         <div className="flex items-center">
-          {mobileImages.map((src, index) => (
+          {mobileImages.map((image, index) => (
             <div
               key={index}
               className="relative w-14 h-14 sm:w-[68px] sm:h-[68px] md:w-20 md:h-20 rounded-[12px] overflow-hidden shadow-lg border-2 border-white"
@@ -39,8 +39,8 @@ export function DiscoverySectionV3() {
               }}
             >
               <Image
-                src={src}
-                alt="Personality type"
+                src={image.src}
+                alt={image.alt}
                 fill
                 className="object-cover"
                 sizes="128px"
@@ -58,8 +58,8 @@ export function DiscoverySectionV3() {
           style={{ transform: "translateY(-50%) rotate(-3deg)" }}
         >
           <Image
-            src={leftImages[0]}
-            alt="Personality type"
+            src={leftImages[0].src}
+            alt={leftImages[0].alt}
             fill
             className="object-cover"
             sizes="160px"
@@ -72,8 +72,8 @@ export function DiscoverySectionV3() {
           style={{ transform: "rotate(-8deg)" }}
         >
           <Image
-            src={leftImages[1]}
-            alt="Personality type"
+            src={leftImages[1].src}
+            alt={leftImages[1].alt}
             fill
             className="object-cover"
             sizes="144px"
@@ -86,8 +86,8 @@ export function DiscoverySectionV3() {
           style={{ transform: "rotate(-15deg)" }}
         >
           <Image
-            src={leftImages[2]}
-            alt="Personality type"
+            src={leftImages[2].src}
+            alt={leftImages[2].alt}
             fill
             className="object-cover"
             sizes="160px"
@@ -103,8 +103,8 @@ export function DiscoverySectionV3() {
           style={{ transform: "translateY(-50%) rotate(3deg)" }}
         >
           <Image
-            src={rightImages[0]}
-            alt="Personality type"
+            src={rightImages[0].src}
+            alt={rightImages[0].alt}
             fill
             className="object-cover"
             sizes="160px"
@@ -117,8 +117,8 @@ export function DiscoverySectionV3() {
           style={{ transform: "rotate(8deg)" }}
         >
           <Image
-            src={rightImages[1]}
-            alt="Personality type"
+            src={rightImages[1].src}
+            alt={rightImages[1].alt}
             fill
             className="object-cover"
             sizes="144px"
@@ -131,8 +131,8 @@ export function DiscoverySectionV3() {
           style={{ transform: "rotate(15deg)" }}
         >
           <Image
-            src={rightImages[2]}
-            alt="Personality type"
+            src={rightImages[2].src}
+            alt={rightImages[2].alt}
             fill
             className="object-cover"
             sizes="160px"

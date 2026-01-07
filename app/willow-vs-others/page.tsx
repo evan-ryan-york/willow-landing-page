@@ -99,7 +99,7 @@ function KPICardsSection() {
               <div className="w-16 h-16 mb-4 relative">
                 <Image
                   src={card.icon}
-                  alt=""
+                  alt={`${card.heading} icon`}
                   fill
                   className="object-contain"
                 />

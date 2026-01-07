@@ -106,7 +106,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 mb-4 relative">
                   <Image
                     src="/about-us-assets/completion-gap-icon.svg"
-                    alt=""
+                    alt="Completion gap icon"
                     fill
                     className="object-contain"
                   />
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 mb-4 relative">
                   <Image
                     src="/about-us-assets/debt-trap.svg"
-                    alt=""
+                    alt="Debt trap icon"
                     fill
                     className="object-contain"
                   />
@@ -140,7 +140,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 mb-4 relative">
                   <Image
                     src="/about-us-assets/underemployment-trap.svg"
-                    alt=""
+                    alt="Underemployment trap icon"
                     fill
                     className="object-contain"
                   />
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 mb-4 relative">
                   <Image
                     src="/about-us-assets/roi-transparency.svg"
-                    alt=""
+                    alt="ROI transparency icon"
                     fill
                     className="object-contain"
                   />
@@ -219,7 +219,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 mb-4 relative">
                   <Image
                     src="/about-us-assets/comprehensive-pathways.svg"
-                    alt=""
+                    alt="Comprehensive pathways icon"
                     fill
                     className="object-contain"
                   />
@@ -236,7 +236,7 @@ export default function AboutPage() {
                 <div className="w-16 h-16 mb-4 relative">
                   <Image
                     src="/about-us-assets/ai-powered-support.svg"
-                    alt=""
+                    alt="AI-powered support icon"
                     fill
                     className="object-contain"
                   />

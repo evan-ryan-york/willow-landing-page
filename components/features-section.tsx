@@ -106,7 +106,7 @@ function FeatureBlock({
               <div className="absolute top-8 right-8 w-[50%] z-10">
                 <Image
                   src={feature.overlayImage}
-                  alt=""
+                  alt={`${feature.title} conversation example`}
                   width={400}
                   height={400}
                   unoptimized
