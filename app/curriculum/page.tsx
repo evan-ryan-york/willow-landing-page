@@ -121,9 +121,9 @@ export default function CurriculumPage() {
         </section>
 
         {/* Features Section */}
-        <section className="py-20 md:py-30 bg-white">
+        <section className="py-10 md:py-30 bg-white">
           <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
-            <div className="space-y-24">
+            <div className="space-y-16 md:space-y-24">
               {features.map((feature, index) => (
                 <FeatureBlock
                   key={index}

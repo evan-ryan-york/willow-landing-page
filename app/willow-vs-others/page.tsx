@@ -86,7 +86,7 @@ function KPICardsSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-10 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <motion.div
           ref={ref}
@@ -244,7 +244,7 @@ function ComparisonTableSection() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
+    <section className="py-10 md:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
         <motion.div
           ref={ref}
@@ -375,7 +375,7 @@ function ScienceOfReadingSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-10 md:py-24 bg-white">
       <div className="max-w-3xl mx-auto px-5 md:px-10 lg:px-16">
         <motion.div
           ref={ref}

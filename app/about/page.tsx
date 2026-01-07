@@ -47,7 +47,7 @@ export default function AboutPage() {
         </section>
 
         {/* Personal Note Section */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 md:py-20 bg-white">
           <div className="max-w-3xl mx-auto px-5 md:px-10 lg:px-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -83,7 +83,7 @@ export default function AboutPage() {
         </section>
 
         {/* Challenge Section */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 md:py-20 bg-white">
           <motion.div
             ref={challengeRef}
             initial={{ opacity: 0, y: 30 }}
@@ -164,7 +164,7 @@ export default function AboutPage() {
         </section>
 
         {/* Platform Statement Section */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 md:py-20 bg-white">
           <div className="max-w-3xl mx-auto px-5 md:px-10 lg:px-16">
             <motion.p
               initial={{ opacity: 0, y: 30 }}
@@ -179,7 +179,7 @@ export default function AboutPage() {
         </section>
 
         {/* Solution Section */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 md:py-20 bg-white">
           <motion.div
             ref={solutionRef}
             initial={{ opacity: 0, y: 30 }}
@@ -253,7 +253,7 @@ export default function AboutPage() {
         </section>
 
         {/* Progress Section */}
-        <section className="py-16 md:py-20 bg-white">
+        <section className="py-10 md:py-20 bg-white">
           <div className="max-w-3xl mx-auto px-5 md:px-10 lg:px-16">
             <motion.div
               ref={progressRef}
@@ -287,7 +287,7 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 md:py-20 bg-gray-50">
+        <section className="py-10 md:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-5 md:px-10 lg:px-16">
             <motion.div
               ref={teamRef}
